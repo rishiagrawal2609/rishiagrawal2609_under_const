@@ -6,9 +6,10 @@ import {
   about_me_exp,
   about_photo_name,
   about_me_links,
+  my_name,
 } from "../texts";
 
-export default function about() {
+export default function About() {
   useEffect(() => {
     var newAbout = "";
     about_me.split("\n").forEach((para) => {
@@ -42,7 +43,7 @@ export default function about() {
           about_me_exp != null && (
             <>
               <span>
-                Here are a few technologies I've been working with recently:
+                Here are a few technologies I{"'"}ve been working with recently:
               </span>
               <ul>
                 {about_me_exp.map((skill, index) => {
@@ -54,7 +55,12 @@ export default function about() {
       </div>
       <div className="about-photo">
         <div className="imgContainer">
-          <Image src={`/${about_photo_name}`} fill className="nextImg" />
+          <Image
+            src={`/${about_photo_name}`}
+            fill
+            className="nextImg"
+            alt={my_name}
+          />
         </div>
       </div>
     </section>

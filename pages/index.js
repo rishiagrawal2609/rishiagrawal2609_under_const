@@ -2,15 +2,15 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import Home from "../components/pages/home";
-import About from "../components/pages/about";
-import Experience from "../components/pages/experience";
-import Work from "../components/pages/work";
-import Contact from "../components/pages/contact";
+import Home from "../components/pages/Home";
+import About from "../components/pages/About";
+import Experience from "../components/pages/Experience";
+import Work from "../components/pages/Work";
+import Contact from "../components/pages/Contact";
 
-import Header from "../components/blocks/header";
-import MainLeft from "../components/blocks/mainLeft";
-import MainRight from "../components/blocks/mainRight";
+import Header from "../components/blocks/Header";
+import MainLeft from "../components/blocks/MainLeft";
+import MainRight from "../components/blocks/MainRight";
 
 import { FiX } from "react-icons/fi";
 

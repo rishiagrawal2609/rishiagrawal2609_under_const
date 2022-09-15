@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 import { my_name } from "../texts";
 
-export default function header() {
+export default function Header() {
   const [navActive, setNavActive] = useState(false);
   const [onPC, setOnPC] = useState(true);
 

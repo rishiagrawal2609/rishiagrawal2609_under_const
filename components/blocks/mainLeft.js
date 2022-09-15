@@ -11,7 +11,7 @@ import {
   my_whatsapp,
 } from "../texts";
 
-export default function mainLeft() {
+export default function MainLeft() {
   return (
     <div id="main-left" className="only-pc">
       {my_github != "" && my_github != null && (

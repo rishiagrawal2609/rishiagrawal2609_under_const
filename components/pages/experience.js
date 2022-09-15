@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function experience() {
+export default function Experience() {
   return <section id="experience">experience</section>;
 }

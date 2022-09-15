@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import {
   home_desc,
@@ -8,7 +8,7 @@ import {
   home_links,
 } from "../texts";
 
-export default function home() {
+export default function Home() {
   useEffect(() => {
     if (document.querySelector("#home p") == undefined) {
       var homeDesc = home_desc;
