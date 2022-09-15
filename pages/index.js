@@ -8,9 +8,9 @@ import Experience from "../components/sections/Experience.js";
 import Work from "../components/sections/Work";
 import Contact from "../components/sections/Contact.js";
 
-import Header from "../components/blocks/Header.js";
-import MainLeft from "../components/blocks/MainLeft.js";
-import MainRight from "../components/blocks/MainRight.js";
+import Header from "../components/_parts/Header.js";
+import MainLeft from "../components/_parts/MainLeft.js";
+import MainRight from "../components/_parts/MainRight.js";
 
 import { FiX } from "react-icons/fi";
 
