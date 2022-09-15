@@ -13,6 +13,7 @@ import MainLeft from "../components/_parts/MainLeft.js";
 import MainRight from "../components/_parts/MainRight.js";
 
 import { FiX } from "react-icons/fi";
+import { home_desc } from "../components/texts.js";
 
 export default function Main() {
   const router = useRouter();
@@ -116,6 +117,7 @@ export default function Main() {
     <div id="main">
       <Head>
         <title>Gobind Singh</title>
+        <meta name="description" content={home_desc} />
       </Head>
       {popupVisible && (
         <>

@@ -8,6 +8,7 @@ import {
   my_github,
   my_instagram,
   my_linkedin,
+  my_name,
   my_whatsapp,
 } from "../texts";
 
@@ -19,6 +20,7 @@ export default function MainLeft() {
           href={`https://www.github.com/${my_github}`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Github | ${my_name}`}
         >
           <FiGithub />
         </a>
@@ -28,6 +30,7 @@ export default function MainLeft() {
           href={`https://www.instagram.com/${my_instagram}`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Instagram | ${my_name}`}
         >
           <FiInstagram />
         </a>
@@ -37,6 +40,7 @@ export default function MainLeft() {
           href={`https://www.linkedin.com/in/${my_linkedin}`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`LinkedIn | ${my_name}`}
         >
           <FiLinkedin />
         </a>
@@ -46,6 +50,7 @@ export default function MainLeft() {
           href={`mailto:${my_email}`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Email | ${my_name}`}
         >
           <FiMail />
         </a>
@@ -55,6 +60,7 @@ export default function MainLeft() {
           href={`httpss://wa.me/${my_whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`WhatsApp | ${my_name}`}
         >
           <FaWhatsapp />
         </a>

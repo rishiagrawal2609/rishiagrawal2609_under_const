@@ -4,7 +4,14 @@ import Link from "next/link";
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
-import { my_name } from "../texts";
+import {
+  my_email,
+  my_github,
+  my_instagram,
+  my_linkedin,
+  my_name,
+  my_whatsapp,
+} from "../texts";
 
 export default function Header() {
   const [navActive, setNavActive] = useState(false);
@@ -65,61 +72,71 @@ export default function Header() {
         }
       >
         <Link href="/#about">
-          <a>About</a>
+          <a aria-label={"About " + my_name}>About</a>
         </Link>
         <Link href="/#experience">
-          <a>Experience</a>
+          <a aria-label={"Experiences of " + my_name}>Experience</a>
         </Link>
         <Link href="/#work">
-          <a>Work</a>
+          <a aria-label={"Work by " + my_name}>Work</a>
         </Link>
         <Link href="/#contact">
-          <a>Contact</a>
+          <a aria-label={"Contact " + my_name}>Contact</a>
         </Link>
         <Link href="/resume.jpg">
-          <a>Resume</a>
+          <a aria-label={"Resume of " + my_name}>Resume</a>
         </Link>
         <div className="icons no-pc">
-          <a
-            href="http://www.github.com/theGobindSingh"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Github | Gobind Singh"
-          >
-            <FiGithub />
-          </a>
-          <a
-            href="http://www.instagram.com/theGobindSingh"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram | Gobind Singh"
-          >
-            <FiInstagram />
-          </a>
-          <a
-            href="http://www.linkedin.com/in/theGobindSingh"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn | Gobind Singh"
-          >
-            <FiLinkedin />
-          </a>
-          <a
-            href="mailto:android.gobind@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Email | Gobind Singh"
-          >
-            <FiMail />
-          </a>
-          <a
-            href="https://wa.me/+919415507316"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Whatsapp | Gobind Singh"
-          >
-            <FaWhatsapp />
-          </a>
+          {my_github != "" && my_github != null && (
+            <a
+              href={`https://www.github.com/${my_github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Github | ${my_name}`}
+            >
+              <FiGithub />
+            </a>
+          )}
+          {my_instagram != "" && my_instagram != null && (
+            <a
+              href={`https://www.instagram.com/${my_instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Instagram | ${my_name}`}
+            >
+              <FiInstagram />
+            </a>
+          )}
+          {my_linkedin != "" && my_linkedin != null && (
+            <a
+              href={`https://www.linkedin.com/in/${my_linkedin}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`LinkedIn | ${my_name}`}
+            >
+              <FiLinkedin />
+            </a>
+          )}
+          {my_email != "" && my_email != null && (
+            <a
+              href={`mailto:${my_email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Email | ${my_name}`}
+            >
+              <FiMail />
+            </a>
+          )}
+          {my_whatsapp != "" && my_whatsapp != null && (
+            <a
+              href={`httpss://wa.me/${my_whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`WhatsApp | ${my_name}`}
+            >
+              <FaWhatsapp />
+            </a>
+          )}
         </div>
       </nav>
     </header>
