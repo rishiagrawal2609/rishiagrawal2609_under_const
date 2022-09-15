@@ -2,11 +2,11 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import Home from "../components/pages/Home.js";
-import About from "../components/pages/About.js";
-import Experience from "../components/pages/Experience.js";
-import Work from "../components/pages/Work";
-import Contact from "../components/pages/Contact.js";
+import Home from "../components/sections/Home.js";
+import About from "../components/sections/About.js";
+import Experience from "../components/sections/Experience.js";
+import Work from "../components/sections/Work";
+import Contact from "../components/sections/Contact.js";
 
 import Header from "../components/blocks/Header.js";
 import MainLeft from "../components/blocks/MainLeft.js";
