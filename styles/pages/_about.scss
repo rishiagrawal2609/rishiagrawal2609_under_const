@@ -1,0 +1,120 @@
+#about {
+  counter-increment: pageNums;
+  & > div {
+    height: 60vh;
+    max-width: 550px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about-me {
+    width: 50%;
+    article {
+      width: 100%;
+      color: var(--primary-white-one);
+      h2 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-family: var(--font-mono);
+        font-weight: 500;
+        margin-bottom: 20px;
+        &::before {
+          content: "0" counter(pageNums) ". ";
+          margin-right: 10px;
+          color: var(--secondary-grey-one);
+        }
+        &::after {
+          content: "";
+          width: 40%;
+          height: 1px;
+          background-color: var(--secondary-grey-one);
+          opacity: 0.5;
+          margin-left: auto;
+        }
+      }
+      span {
+        line-height: 30px;
+      }
+    }
+    & > span {
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      list-style: none;
+      margin-left: 20px;
+      li {
+        position: relative;
+        line-height: 30px;
+        &::before {
+          content: "▹";
+          position: absolute;
+          left: -20px;
+        }
+      }
+    }
+  }
+  .about-photo {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    isolation: isolate;
+    .imgContainer {
+      $borRad: 10px;
+      height: 30vh;
+      width: 30vh;
+      position: relative;
+      border: 2px solid var(--secondary-grey-two);
+      border-radius: $borRad;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease-out;
+      &:hover {
+        border: 2px solid var(--secondary-grey-one);
+      }
+      .nextImg {
+        object-fit: cover;
+        z-index: 1;
+        border-radius: $borRad;
+        overflow: hidden;
+      }
+      &::before {
+        border-radius: $borRad;
+        position: absolute;
+        content: "";
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        background-color: var(--secondary-grey-one);
+        mix-blend-mode: color;
+        opacity: 1;
+        transition: all 0.2s ease-out;
+      }
+      &::after {
+        border-radius: $borRad;
+        position: absolute;
+        content: "";
+        z-index: -1;
+        transform: translate(20px, 20px);
+        height: 100%;
+        width: 100%;
+        // background-color: aquamarine;
+        border: 2px solid var(--secondary-grey-one);
+        transition: all 0.2s ease-out;
+      }
+      &:hover::before {
+        opacity: 0;
+      }
+      &:hover::after {
+        border: 2px solid var(--secondary-grey-two);
+        transform: translate(15px, 15px);
+      }
+    }
+  }
+}
