@@ -63,6 +63,7 @@ export const about_photo_name = "me.jpg";
 // put your photo in "public" folder and store the photos name in about_photo_name
 
 //EXPERIENCE
+export const experience_heading = "Where I've Worked";
 export const experiences = [
   {
     role: "Engineer",

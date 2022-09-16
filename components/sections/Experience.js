@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { experiences } from "../texts";
+import { experiences, experience_heading } from "../texts";
 import { css_upwardAnimation } from "../css";
 
 export default function Experience() {
@@ -24,7 +24,7 @@ export default function Experience() {
   return (
     <section id="experience" aria-label="Experience">
       <div className="contentful">
-        <h2>Where I've Worked</h2>
+        <h2>{experience_heading}</h2>
         <div className="inside-exp">
           <div className="left-panel">
             {experiences.map((exp, index) => {
