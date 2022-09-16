@@ -10,6 +10,7 @@ import {
   my_instagram,
   my_linkedin,
   my_name,
+  my_resume_file,
   my_whatsapp,
 } from "../texts";
 
@@ -28,14 +29,22 @@ export default function Header() {
         setOnPC(true);
       }
     });
-    document
-      .querySelectorAll(".main-header nav > *")
-      .forEach((elem, index, arr) => {
-        elem.style["animation-delay"] = `${index / arr.length + 0.3}s`;
-        elem.addEventListener("click", () => {
-          setNavActive(false);
+    if (window.innerWidth >= 900) {
+      document
+        .querySelectorAll(".main-header nav > a")
+        .forEach((page, index, arr) => {
+          page.style["animation-delay"] = `${index / arr.length + 0.3}s`;
         });
-      });
+    } else {
+      document
+        .querySelectorAll(".main-header nav > *")
+        .forEach((elem, index, arr) => {
+          elem.style["animation-delay"] = `${index / arr.length + 0.3}s`;
+          elem.addEventListener("click", () => {
+            setNavActive(false);
+          });
+        });
+    }
   }, []);
   return (
     <header
@@ -83,11 +92,19 @@ export default function Header() {
         <Link href="/#contact">
           <a aria-label={"Contact " + my_name}>Contact</a>
         </Link>
-        <Link href="/resume.jpg">
-          <a aria-label={"Resume of " + my_name}>Resume</a>
-        </Link>
+        {my_resume_file != null && (
+          <Link href={`/${my_resume_file}`}>
+            <a
+              aria-label={"Resume of " + my_name}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </Link>
+        )}
         <div className="icons no-pc">
-          {my_github != "" && my_github != null && (
+          {my_github != null && (
             <a
               href={`https://www.github.com/${my_github}`}
               target="_blank"
@@ -97,7 +114,7 @@ export default function Header() {
               <FiGithub />
             </a>
           )}
-          {my_instagram != "" && my_instagram != null && (
+          {my_instagram != null && (
             <a
               href={`https://www.instagram.com/${my_instagram}`}
               target="_blank"
@@ -107,7 +124,7 @@ export default function Header() {
               <FiInstagram />
             </a>
           )}
-          {my_linkedin != "" && my_linkedin != null && (
+          {my_linkedin != null && (
             <a
               href={`https://www.linkedin.com/in/${my_linkedin}`}
               target="_blank"
@@ -117,7 +134,7 @@ export default function Header() {
               <FiLinkedin />
             </a>
           )}
-          {my_email != "" && my_email != null && (
+          {my_email != null && (
             <a
               href={`mailto:${my_email}`}
               target="_blank"
@@ -127,7 +144,7 @@ export default function Header() {
               <FiMail />
             </a>
           )}
-          {my_whatsapp != "" && my_whatsapp != null && (
+          {my_whatsapp != null && (
             <a
               href={`httpss://wa.me/${my_whatsapp}`}
               target="_blank"

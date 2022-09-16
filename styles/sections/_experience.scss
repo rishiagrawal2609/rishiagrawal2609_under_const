@@ -1,0 +1,171 @@
+#experience {
+  padding: 0;
+  .contentful {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    h2 {
+      &::after {
+        width: 15vw;
+      }
+    }
+    & > div {
+      height: 40vh;
+    }
+    a {
+      &::after {
+        content: none;
+      }
+    }
+    .inside-exp {
+      display: flex;
+      .left-panel {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        button {
+          background-color: rgba(0, 0, 0, 0);
+          border: none;
+          font-size: large;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          cursor: pointer;
+          position: relative;
+          &,
+          * {
+            transition: all 0.3s ease-in-out;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 2px;
+          }
+          &.exp-btn {
+            color: var(--secondary-grey-one);
+            opacity: 0.7;
+            &::before {
+              background-color: var(--secondary-grey-one);
+            }
+          }
+          &.exp-btn-active {
+            color: white;
+            font-weight: 500;
+            opacity: 1;
+            &::before {
+              background-color: white;
+            }
+          }
+        }
+      }
+      .right-panel {
+        width: 80%;
+        // background-color: grey;
+        padding-left: 20px;
+        h3 {
+          color: var(--secondary-grey-one);
+          span,
+          a {
+            color: white;
+            font-weight: bold;
+          }
+        }
+        & > span {
+          font-size: small;
+          letter-spacing: 2px;
+          color: var(--secondary-grey-one);
+        }
+        ul {
+          li {
+            margin: 10px 0;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  #experience {
+    min-height: 70vh !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    .contentful {
+      width: 100%;
+      h2 {
+        &::after {
+          width: 10%;
+        }
+      }
+      .inside-exp {
+        display: flex;
+        flex-direction: column;
+        .left-panel {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          overflow-y: auto;
+          margin-bottom: 20px;
+          button {
+            padding-left: 10px;
+            padding-right: 10px;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: unset;
+              bottom: 0;
+              left: 0;
+              height: 2px;
+              width: 100%;
+            }
+            &.exp-btn {
+              color: var(--secondary-grey-one);
+              opacity: 0.7;
+              &::before {
+                background-color: var(--secondary-grey-one);
+              }
+            }
+            &.exp-btn-active {
+              color: white;
+              font-weight: 500;
+              opacity: 1;
+              &::before {
+                background-color: white;
+              }
+            }
+          }
+        }
+        .right-panel {
+          width: 100%;
+          // background-color: grey;
+          padding-left: 10px;
+          padding-right: 20px;
+          h3 {
+            color: var(--secondary-grey-one);
+            span,
+            a {
+              color: white;
+              font-weight: bold;
+            }
+          }
+          & > span {
+            font-size: small;
+            letter-spacing: 2px;
+            color: var(--secondary-grey-one);
+          }
+          ul {
+            li {
+              margin: 10px 0;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

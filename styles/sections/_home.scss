@@ -2,6 +2,7 @@
   flex-direction: column;
   main {
     // width: min(65%, );
+    opacity: 0;
     max-width: 1000px;
     h1 {
       display: flex;
@@ -16,7 +17,7 @@
       }
       span:nth-child(2) {
         font-family: var(--font-sans-poppins);
-        font-weight: 500;
+        font-weight: 600;
         font-size: 4rem;
         color: var(--primary-white-one);
         letter-spacing: 3px;
@@ -37,6 +38,36 @@
       font-size: 18px;
       color: var(--secondary-grey-one);
       line-height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #home {
+    main {
+      max-width: 90vw;
+      h1 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        span:nth-child(1) {
+          font-size: medium;
+        }
+        span:nth-child(2) {
+          font-size: 2rem;
+        }
+        span:nth-child(3) {
+          font-size: 2rem;
+        }
+        span {
+          margin: 5px 0;
+        }
+      }
+
+      p {
+        max-width: 80%;
+      }
     }
   }
 }

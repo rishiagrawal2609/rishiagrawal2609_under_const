@@ -35,7 +35,6 @@ export default function Main() {
               allSections[i].style.top =
                 window.innerHeight * i - window.pageYOffset + "px";
             }
-
             if (
               window.innerHeight * i - window.pageYOffset <= 100 &&
               parseInt(allSections[i].style.top.replace("px", "")) > 0

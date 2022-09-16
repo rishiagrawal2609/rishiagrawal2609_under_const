@@ -1,4 +1,5 @@
 header {
+  // opacity: 0;
   z-index: 999;
   position: fixed;
   width: 100%;
@@ -11,16 +12,6 @@ header {
   font-size: small;
   * {
     transition: all 0.1s ease-out;
-  }
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0px);
-    }
   }
 
   @mixin bgBlur($val: 5px) {
@@ -83,6 +74,8 @@ header {
       a {
         margin: 0 30px;
         color: var(--secondary-grey-one);
+        opacity: 0;
+        animation: navLinkDown 0.8s ease forwards;
 
         &:hover {
           color: white;
@@ -211,5 +204,34 @@ header {
     font-family: var(--font-cursive);
     letter-spacing: 4px;
     z-index: -1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    @keyframes navLinkFade {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+}
+@media screen and (min-width: 900px) {
+  header {
+    @keyframes navLinkDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
   }
 }

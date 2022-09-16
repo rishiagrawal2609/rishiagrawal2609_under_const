@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
@@ -11,11 +11,19 @@ import {
   my_name,
   my_whatsapp,
 } from "../texts";
+import { css_upwardAnimation } from "../css";
 
 export default function MainLeft() {
+  useEffect(() => {
+    var forAnimation = document.querySelector("#main > #main-left");
+    forAnimation.style["animation"] = css_upwardAnimation;
+    forAnimation.style["animation-delay"] = `${
+      parseInt(css_upwardAnimation.split(" ")[3].replace("s", "")) + 1.3
+    }s`;
+  }, []);
   return (
     <div id="main-left" className="only-pc">
-      {my_github != "" && my_github != null && (
+      {my_github != null && (
         <a
           href={`https://www.github.com/${my_github}`}
           target="_blank"
@@ -25,7 +33,7 @@ export default function MainLeft() {
           <FiGithub />
         </a>
       )}
-      {my_instagram != "" && my_instagram != null && (
+      {my_instagram != null && (
         <a
           href={`https://www.instagram.com/${my_instagram}`}
           target="_blank"
@@ -35,7 +43,7 @@ export default function MainLeft() {
           <FiInstagram />
         </a>
       )}
-      {my_linkedin != "" && my_linkedin != null && (
+      {my_linkedin != null && (
         <a
           href={`https://www.linkedin.com/in/${my_linkedin}`}
           target="_blank"
@@ -45,7 +53,7 @@ export default function MainLeft() {
           <FiLinkedin />
         </a>
       )}
-      {my_email != "" && my_email != null && (
+      {my_email != null && (
         <a
           href={`mailto:${my_email}`}
           target="_blank"
@@ -55,7 +63,7 @@ export default function MainLeft() {
           <FiMail />
         </a>
       )}
-      {my_whatsapp != "" && my_whatsapp != null && (
+      {my_whatsapp != null && (
         <a
           href={`httpss://wa.me/${my_whatsapp}`}
           target="_blank"

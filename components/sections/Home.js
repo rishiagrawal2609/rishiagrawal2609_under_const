@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { css_upwardAnimation } from "../css";
 
 import {
   home_desc,
@@ -10,10 +11,13 @@ import {
 
 export default function Home() {
   useEffect(() => {
-    if (document.querySelector("#home p") == undefined) {
+    if (
+      document.querySelector("#home main p") == undefined &&
+      home_desc != null
+    ) {
       var homeDesc = home_desc;
 
-      if (home_links.length != 0 && home_links != null && home_links != "") {
+      if (home_links != null) {
         home_links.forEach((link) => {
           homeDesc = homeDesc.replace(
             link.text,
@@ -28,14 +32,19 @@ export default function Home() {
       elem.innerHTML = homeDesc;
       document.querySelector("#home main").appendChild(elem);
     }
+    var forAnimation = document.querySelector("#home main");
+    forAnimation.style["animation"] = css_upwardAnimation;
+    forAnimation.style["animation-delay"] = `${
+      parseInt(css_upwardAnimation.split(" ")[3].replace("s", "")) + 0.8
+    }s`;
   }, []);
   return (
-    <section id="home">
+    <section id="home" aria-label="Home">
       <main>
         <h1>
-          <span>{home_hello}</span>
+          <span>{home_hello || "Hi, my name is"}</span>
           <span>{my_name + "."}</span>
-          <span>{home_sub_heading}</span>
+          {home_sub_heading != null && <span>{home_sub_heading}</span>}
         </h1>
       </main>
     </section>
