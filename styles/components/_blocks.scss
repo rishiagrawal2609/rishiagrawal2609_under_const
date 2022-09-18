@@ -25,7 +25,8 @@
   justify-content: space-between;
   font-size: 1.3rem;
 
-  a:hover {
+  a:hover,
+  a:focus {
     color: white;
     transform: translateY(-2px) scale(1.06, 1.06);
     filter: drop-shadow(0 0 1px white);
@@ -47,7 +48,8 @@
     writing-mode: vertical-rl;
     -webkit-writing-mode: vertical-rl;
   }
-  a:hover {
+  a:hover,
+  a:focus {
     color: white;
     transform: translateY(-2px) scale(1.02, 1.02);
     filter: drop-shadow(0 0 2px black);

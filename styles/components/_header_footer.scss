@@ -77,7 +77,8 @@ header {
         opacity: 0;
         animation: navLinkDown 0.8s ease forwards;
 
-        &:hover {
+        &:hover,
+        &:focus {
           color: white;
         }
 
@@ -101,9 +102,10 @@ header {
           border-radius: 7px;
         }
 
-        &:not([href^="/#"]):hover {
+        &:not([href^="/#"]):hover,
+        &:not([href^="/#"]):focus {
           border: 1px solid white;
-          background-color: rgba($color: var(--primary-grey-two), $alpha: 1);
+          background-color: var(--secondary-grey-two);
         }
       }
     }
@@ -121,14 +123,15 @@ header {
       right: $shift-value * -2;
       height: 100vh;
       width: 65vw;
-      background-color: var(--secondary-grey-two);
+      background-color: var(--sidenav-bg);
       & > * {
         opacity: 0;
       }
       a {
         color: var(--secondary-grey-one);
         font-size: medium;
-        &:hover {
+        &:hover,
+        &:focus {
           color: white;
           filter: drop-shadow(0 0 1px white);
           -webkit-filter: drop-shadow(0 0 1px white);
@@ -144,7 +147,8 @@ header {
           padding: 10px 15px;
           border-radius: 7px;
         }
-        &[href*="resume"]:hover {
+        &[href*="resume"]:hover,
+        &[href*="resume"]:focus {
           border: 1px solid white;
           background-color: rgba($color: var(--primary-grey-two), $alpha: 1);
         }
@@ -204,6 +208,7 @@ header {
     font-family: var(--font-cursive);
     letter-spacing: 4px;
     z-index: -1;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
   }
 }
 

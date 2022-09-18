@@ -74,6 +74,9 @@ export const experiences = [
       "Write modern, performant, maintainable code for a diverse array of client and internal projects",
       "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
       "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+      "Write modern, performant, maintainable code for a diverse array of client and internal projects",
+      "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
+      "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
     ],
   },
   {
@@ -88,6 +91,16 @@ export const experiences = [
   {
     role: "fun",
     company: "apple",
+    duration: "lololo",
+    website: "https://google.com",
+    list: [
+      "Write modern, performant, maintainable code for a diverse array of client and internal projects",
+      "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+    ],
+  },
+  {
+    role: "fun",
+    company: "lolaaaaaaa",
     duration: "lololo",
     website: "https://google.com",
     list: [

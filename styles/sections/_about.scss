@@ -50,8 +50,8 @@
     isolation: isolate;
     .imgContainer {
       $borRad: 10px;
-      height: 30vh;
-      width: 30vh;
+      height: 300px;
+      width: 300px;
       position: relative;
       border: 2px solid var(--secondary-grey-two);
       border-radius: $borRad;
@@ -133,6 +133,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      .imgContainer {
+        $borRad: 10px;
+        height: 200px;
+        width: 200px;
+      }
     }
   }
 }

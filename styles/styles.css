@@ -4,7 +4,8 @@
   --primary-grey-one: rgb(30, 30, 30);
   --primary-grey-two: rgb(50, 50, 50);
   --secondary-grey-one: rgb(170, 170, 170);
-  --secondary-grey-two: rgba(15, 15, 15, 0.95);
+  --secondary-grey-two: rgba(15, 15, 15, 0.3);
+  --sidenav-bg: rgba(15, 15, 15, 0.95);
   --anchors-primary: rgb(100, 255, 218);
   --anchors-secondary: hsl(216, 65%, 65%);
   --font-sans: "Quicksand", "Poppins", "Calibre", "Inter", "San Francisco",
@@ -34,6 +35,7 @@ a {
   color: inherit;
   text-decoration: none;
   font-weight: 600;
+  display: inline-block;
 }
 
 h2 {
@@ -91,11 +93,16 @@ ul li::before {
     width: 100%;
     font-size: 1.2rem;
   }
+  a {
+    display: initial;
+  }
+  a::after {
+    content: none !important;
+  }
 }
 #main {
   width: 100%;
   overflow-y: hidden;
-  height: 500vh;
   position: relative;
   color: white;
   counter-reset: pageNums;
@@ -132,7 +139,6 @@ ul li::before {
 }
 #main a {
   position: relative;
-  display: inline-block;
 }
 #main a::after {
   content: "";
@@ -180,7 +186,7 @@ ul li::before {
 #main > #popup div {
   height: 55vh;
   width: 75vw;
-  background-color: var(--secondary-grey-two);
+  background-color: var(--sidenav-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -211,6 +217,11 @@ ul li::before {
   }
 }
 @media screen and (max-width: 900px) {
+  #main {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   #main > section {
     padding: 100px 30px;
   }
@@ -244,7 +255,8 @@ ul li::before {
   justify-content: space-between;
   font-size: 1.3rem;
 }
-#main-left a:hover {
+#main-left a:hover,
+#main-left a:focus {
   color: white;
   transform: translateY(-2px) scale(1.06, 1.06);
   filter: drop-shadow(0 0 1px white);
@@ -266,7 +278,8 @@ ul li::before {
       writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
 }
-#main-right a:hover {
+#main-right a:hover,
+#main-right a:focus {
   color: white;
   transform: translateY(-2px) scale(1.02, 1.02);
   filter: drop-shadow(0 0 2px black);
@@ -340,7 +353,7 @@ header nav.pc-view a {
   -webkit-animation: navLinkDown 0.8s ease forwards;
           animation: navLinkDown 0.8s ease forwards;
 }
-header nav.pc-view a:hover {
+header nav.pc-view a:hover, header nav.pc-view a:focus {
   color: white;
 }
 header nav.pc-view a[href^="/#"] {
@@ -360,9 +373,9 @@ header nav.pc-view a:not([href^="/#"]) {
   padding: 10px 15px;
   border-radius: 7px;
 }
-header nav.pc-view a:not([href^="/#"]):hover {
+header nav.pc-view a:not([href^="/#"]):hover, header nav.pc-view a:not([href^="/#"]):focus {
   border: 1px solid white;
-  background-color: rgba(var(--primary-grey-two), 1);
+  background-color: var(--secondary-grey-two);
 }
 header nav.mobile-view {
   padding: 10vh 0;
@@ -376,7 +389,7 @@ header nav.mobile-view {
   right: -100vw;
   height: 100vh;
   width: 65vw;
-  background-color: var(--secondary-grey-two);
+  background-color: var(--sidenav-bg);
 }
 header nav.mobile-view > * {
   opacity: 0;
@@ -385,7 +398,7 @@ header nav.mobile-view a {
   color: var(--secondary-grey-one);
   font-size: medium;
 }
-header nav.mobile-view a:hover {
+header nav.mobile-view a:hover, header nav.mobile-view a:focus {
   color: white;
   filter: drop-shadow(0 0 1px white);
   -webkit-filter: drop-shadow(0 0 1px white);
@@ -399,7 +412,7 @@ header nav.mobile-view a[href*=resume] {
   padding: 10px 15px;
   border-radius: 7px;
 }
-header nav.mobile-view a[href*=resume]:hover {
+header nav.mobile-view a[href*=resume]:hover, header nav.mobile-view a[href*=resume]:focus {
   border: 1px solid white;
   background-color: rgba(var(--primary-grey-two), 1);
 }
@@ -451,6 +464,7 @@ header span {
   font-family: var(--font-cursive);
   letter-spacing: 4px;
   z-index: -1;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
 
 @media screen and (max-width: 900px) {
@@ -559,7 +573,7 @@ header span {
     margin: 5px 0;
   }
   #home main p {
-    max-width: 80%;
+    max-width: 95%;
   }
 }
 #about > .contentful {
@@ -609,8 +623,8 @@ header span {
   isolation: isolate;
 }
 #about .about-photo .imgContainer {
-  height: 30vh;
-  width: 30vh;
+  height: 300px;
+  width: 300px;
   position: relative;
   border: 2px solid var(--secondary-grey-two);
   border-radius: 10px;
@@ -681,9 +695,10 @@ header span {
     justify-content: center;
     align-items: center;
   }
-}
-#experience {
-  padding: 0;
+  #about .about-photo .imgContainer {
+    height: 200px;
+    width: 200px;
+  }
 }
 #experience .contentful {
   width: 700px;
@@ -695,7 +710,7 @@ header span {
   width: 15vw;
 }
 #experience .contentful > div {
-  height: 40vh;
+  height: 45vh;
 }
 #experience .contentful a::after {
   content: none;
@@ -768,7 +783,6 @@ header span {
 
 @media screen and (max-width: 900px) {
   #experience {
-    min-height: 70vh !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
   }
@@ -779,14 +793,19 @@ header span {
     width: 10%;
   }
   #experience .contentful .inside-exp {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #experience .contentful .inside-exp .left-panel {
     display: flex;
     flex-direction: row;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
     margin-bottom: 20px;
   }
   #experience .contentful .inside-exp .left-panel button {

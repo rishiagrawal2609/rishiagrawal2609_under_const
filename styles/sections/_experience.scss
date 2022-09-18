@@ -1,5 +1,4 @@
 #experience {
-  padding: 0;
   .contentful {
     width: 700px;
     display: flex;
@@ -11,7 +10,7 @@
       }
     }
     & > div {
-      height: 40vh;
+      height: 45vh;
     }
     a {
       &::after {
@@ -91,7 +90,6 @@
 }
 @media screen and (max-width: 900px) {
   #experience {
-    min-height: 70vh !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
     .contentful {
@@ -102,13 +100,16 @@
         }
       }
       .inside-exp {
+        width: 100%;
         display: flex;
         flex-direction: column;
+        height: fit-content;
         .left-panel {
           display: flex;
           flex-direction: row;
           width: 100%;
-          overflow-y: auto;
+          overflow-y: hidden;
+          overflow-x: auto;
           margin-bottom: 20px;
           button {
             padding-left: 10px;

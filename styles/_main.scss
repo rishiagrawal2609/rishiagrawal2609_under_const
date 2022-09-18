@@ -1,7 +1,6 @@
 #main {
   width: 100%;
   overflow-y: hidden;
-  height: 500vh;
   position: relative;
   color: white;
   counter-reset: pageNums;
@@ -28,7 +27,7 @@
 
   a {
     position: relative;
-    display: inline-block;
+
     &::after {
       content: "";
       position: absolute;
@@ -77,7 +76,7 @@
     div {
       height: 55vh;
       width: 75vw;
-      background-color: var(--secondary-grey-two);
+      background-color: var(--sidenav-bg);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -112,6 +111,7 @@
 }
 @media screen and (max-width: 900px) {
   #main {
+    height: fit-content;
     & > section {
       padding: ($header-height + 20px) 30px;
     }

@@ -48,9 +48,10 @@ export default function Experience() {
                       var tempInterval = setInterval(() => {
                         btns[currentIndex].classList.remove("exp-btn-active");
                         btns[currentIndex + 1].classList.add("exp-btn-active");
-                        setCurrentExp(currentIndex + 1);
+
                         if (++currentIndex == targetIndex) {
                           clearInterval(tempInterval);
+                          setCurrentExp(targetIndex);
                         }
                       }, 100);
                     }
@@ -58,9 +59,10 @@ export default function Experience() {
                       var tempInterval = setInterval(() => {
                         btns[currentIndex].classList.remove("exp-btn-active");
                         btns[currentIndex - 1].classList.add("exp-btn-active");
-                        setCurrentExp(currentIndex - 1);
+
                         if (--currentIndex == targetIndex) {
                           clearInterval(tempInterval);
+                          setCurrentExp(targetIndex);
                         }
                       }, 100);
                     }
