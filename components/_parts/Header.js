@@ -54,7 +54,20 @@ export default function Header() {
         (navActive ? " nav-active" : "")
       }
     >
-      <span>{my_name}</span>
+      <Link href={"/"}>
+        <a
+          aria-label="Home"
+          onClick={() => {
+            scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          {my_name}
+        </a>
+      </Link>
       <div
         className="no-pc for-blur"
         onClick={() => {

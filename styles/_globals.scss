@@ -17,6 +17,7 @@ a {
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -87,9 +88,9 @@ ul {
     font-size: 1.2rem;
   }
   a {
-    display: initial;
-    &::after {
-      content: none !important;
-    }
+    display: inline-block;
+    // &::after {
+    //   content: none !important;
+    // }
   }
 }

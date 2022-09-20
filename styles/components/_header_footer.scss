@@ -100,12 +100,24 @@ header {
           border: 1px solid var(--secondary-grey-one);
           padding: 10px 15px;
           border-radius: 7px;
+          position: relative;
+          overflow: hidden;
         }
 
         &:not([href^="/#"]):hover,
         &:not([href^="/#"]):focus {
           border: 1px solid white;
-          background-color: var(--secondary-grey-two);
+          &::after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: var(--secondary-grey-one);
+            opacity: 0.2;
+            top: 0;
+            left: 0;
+            z-index: -1;
+          }
         }
       }
     }
@@ -201,7 +213,8 @@ header {
     }
   }
 
-  span {
+  & > a {
+    font-weight: normal;
     margin-right: auto;
     margin-left: 30px;
     font-size: 2rem;

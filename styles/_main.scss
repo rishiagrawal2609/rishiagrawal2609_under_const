@@ -4,6 +4,38 @@
   position: relative;
   color: white;
   counter-reset: pageNums;
+  // @keyframes anchorsAni {
+  //   0% {
+  //     color: var(--anchorAni-one);
+  //   }
+  //   50% {
+  //     color: var(--anchorAni-two);
+  //   }
+  //   100% {
+  //     color: var(--anchorAni-one);
+  //   }
+  // }
+  @keyframes ancAni {
+    0% {
+      left: 0%;
+      width: 0%;
+      background-color: var(--anchorAni-one);
+    }
+    50% {
+      left: 12.5%;
+      width: 75%;
+      background-color: var(--anchorAni-two);
+    }
+    75% {
+      left: 100%;
+      width: 0%;
+      background-color: var(--anchorAni-one);
+    }
+    100% {
+      left: 0%;
+      width: 0%;
+    }
+  }
 
   & > section {
     min-height: 100vh;
@@ -13,53 +45,39 @@
     justify-content: center;
     align-items: center;
     position: relative;
-  }
-  & > section:nth-of-type(n + 2) {
-    counter-increment: pageNums;
-  }
-
-  @for $i from 1 through 6 {
-    & > section:nth-child(#{$i}) {
-      z-index: $i;
-      // background-color: rgb($i * 30, $i * 30, $i * 30);
-    }
-  }
-
-  a {
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      bottom: 0%;
-      left: 0%;
-      height: 1px;
-      transition: width 0.3s;
-    }
-  }
-  & > section:nth-child(even) {
-    background-color: var(--primary-grey-one);
     a {
-      color: var(--anchors-primary);
+      // animation: anchorsAni 2s ease-in-out 0s infinite normal forwards;
+      position: relative;
       &::after {
-        background-color: var(--anchors-primary);
+        content: "";
+        position: absolute;
+        width: 0%;
+        bottom: 0%;
+        // left: 0%;
+        height: 1px;
+        // transition: width 0.3s;
+        animation: ancAni 2s ease 0s infinite normal forwards;
       }
+      // &:hover,
+      // &:focus {
+      //   &::after {
+      //     width: 100%;
+      //   }
+      // }
     }
-  }
-  & > section:nth-child(odd) {
-    background-color: var(--primary-grey-two);
-    a {
-      color: var(--anchors-secondary);
-      &::after {
-        background-color: var(--anchors-secondary);
+    &:nth-of-type(n + 2) {
+      counter-increment: pageNums;
+    }
+    &:nth-child(even) {
+      background-color: var(--primary-grey-one);
+    }
+    &:nth-child(odd) {
+      background-color: var(--primary-grey-two);
+    }
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        z-index: $i;
       }
-    }
-  }
-  a:hover,
-  a:focus {
-    &::after {
-      width: 100%;
     }
   }
 

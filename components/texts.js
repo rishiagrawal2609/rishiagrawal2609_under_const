@@ -69,7 +69,7 @@ export const experiences = [
     role: "Engineer",
     company: "Upstatement",
     duration: "May 2018 - Present",
-    website: "https://google.com",
+    website: "https://google.com", // can be null
     list: [
       "Write modern, performant, maintainable code for a diverse array of client and internal projects",
       "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
@@ -83,7 +83,7 @@ export const experiences = [
     role: "Studio Developer",
     company: "Scout",
     duration: "now - Present",
-    website: null,
+    website: null, // can be null
     list: [
       "Write modern, performant, maintainable code for a diverse array of client and internal projects",
     ],
@@ -92,7 +92,7 @@ export const experiences = [
     role: "fun",
     company: "apple",
     duration: "lololo",
-    website: "https://google.com",
+    website: "https://google.com", // can be null
     list: [
       "Write modern, performant, maintainable code for a diverse array of client and internal projects",
       "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
@@ -102,7 +102,7 @@ export const experiences = [
     role: "fun",
     company: "lolaaaaaaa",
     duration: "lololo",
-    website: "https://google.com",
+    website: "https://google.com", // can be null
     list: [
       "Write modern, performant, maintainable code for a diverse array of client and internal projects",
       "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
@@ -110,5 +110,14 @@ export const experiences = [
   },
 ]; // cannot be null
 //format: an array of objects [{}, {},...], each object will have 5 properties as follows:
-//    text property will tell what text you want to be selected (every occurance will be selected)
-//    link property will tell the hyperlink you want to add to that text
+//    role property - your job title/role
+//    company - name of company you worked in
+//    duration - the time period in which you worked in the company
+//    website - the website of the company - it can be null also
+//    list - points you wanna mention - its an array of strings - ["", "", ...] - cannot be null
+
+//CONTACT PAGE
+export const cont_heading_one = "What's Next?"; // cannot be null
+export const cont_heading_two = "Get In Touch."; // cannot be null
+export const cont_desc = `Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!`; // cannot be null
+export const cont_email_btn = "Say Hello";
