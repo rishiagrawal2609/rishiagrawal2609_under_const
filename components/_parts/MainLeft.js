@@ -13,7 +13,7 @@ import {
 } from "../texts";
 import { css_upwardAnimation } from "../css";
 
-export default function MainLeft() {
+export default function MainLeft({ divID, divClass }) {
   useEffect(() => {
     var forAnimation = document.querySelector("#main > #main-left");
     forAnimation.style["animation"] = css_upwardAnimation;
@@ -22,7 +22,7 @@ export default function MainLeft() {
     }s`;
   }, []);
   return (
-    <div id="main-left" className="only-pc">
+    <div id={divID} className={divClass}>
       {my_github != null && (
         <a
           href={`https://www.github.com/${my_github}`}
@@ -65,7 +65,7 @@ export default function MainLeft() {
       )}
       {my_whatsapp != null && (
         <a
-          href={`httpss://wa.me/${my_whatsapp}`}
+          href={`https://wa.me/${my_whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`WhatsApp | ${my_name}`}

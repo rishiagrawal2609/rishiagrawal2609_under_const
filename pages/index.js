@@ -147,7 +147,7 @@ export default function Main() {
         <Contact />
       </>
       <>
-        <MainLeft />
+        <MainLeft divID={"main-left"} divClass={"only-pc"} />
         <MainRight />
       </>
     </div>

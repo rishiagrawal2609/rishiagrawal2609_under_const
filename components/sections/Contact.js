@@ -7,6 +7,7 @@ import {
   cont_email_btn,
   my_email,
 } from "../texts";
+import MainLeft from "../_parts/MainLeft";
 
 export default function Contact() {
   return (
@@ -24,6 +25,7 @@ export default function Contact() {
         </a>
       </div>
       <footer>
+        <MainLeft divID={"footer-icons"} divClass={"icons no-pc"} />
         <span>
           Design inspired from{" "}
           <a
@@ -33,6 +35,7 @@ export default function Contact() {
           >
             Brittany Chiang
           </a>{" "}
+          <br />
           and Built by{" "}
           <a
             href="https://github.com/theGobindSingh/theGobindSingh"
