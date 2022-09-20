@@ -8,13 +8,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link
-          rel="shortcut icon"
-          href={`${process.env.NEXT_PUBLIC_FAVICON}/favicon.ico`}
-          type="image/x-icon"
-        />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-
         <style>{css}</style>
       </Head>
       <body>
