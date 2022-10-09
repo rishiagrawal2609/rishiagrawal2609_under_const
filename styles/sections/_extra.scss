@@ -1,0 +1,73 @@
+#extra-curricular {
+  padding: 0 !important;
+  .contentful-different {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: -1;
+    &::before {
+      content: "";
+      height: 25%;
+      width: 100%;
+      background-color: var(--primary-grey-two);
+      position: absolute;
+      top: 0;
+      left: 0%;
+      z-index: 0;
+      border-radius: 25% 25% 50% 50% / 0% 0% 100% 100%;
+    }
+    &::after {
+      content: "";
+      height: 25%;
+      width: 100%;
+      background-color: var(--primary-grey-two);
+      position: absolute;
+      bottom: 0;
+      left: 0%;
+      z-index: 0;
+      border-radius: 50% 50% 25% 25% / 100% 100% 0% 0%;
+    }
+    h2,
+    span {
+      top: 20%;
+      left: 50%;
+      z-index: 999;
+      color: white;
+      position: absolute;
+    }
+    .pictures {
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      z-index: -9999;
+      .photo-carousel {
+        height: 100%;
+        width: 100%;
+        ul {
+          align-items: center;
+          li {
+            height: 100vh;
+          }
+          li::before {
+            content: none;
+          }
+          .gallery-img-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .gallery-img {
+              object-fit: cover;
+              padding: 10px;
+            }
+          }
+        }
+      }
+    }
+    .btns {
+      position: absolute;
+      z-index: 999;
+      bottom: 11%;
+      left: 50%;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import useAddAni from "../hooks/useAddAni";
 
 import {
   cont_desc,
@@ -10,6 +11,7 @@ import {
 import MainLeft from "../_parts/MainLeft";
 
 export default function Contact() {
+  useAddAni("contact");
   return (
     <section id="contact" aria-label="Contact">
       <div className="contentful">
@@ -27,9 +29,9 @@ export default function Contact() {
       <footer>
         <MainLeft divID={"footer-icons"} divClass={"icons no-pc"} />
         <span>
-          Design inspired from{" "}
+          Design inspired by{" "}
           <a
-            href="https://github.com/bchiang7/v4"
+            href="https://github.com/bchiang7/"
             target="_blank"
             rel="noopener noreferrer"
           >

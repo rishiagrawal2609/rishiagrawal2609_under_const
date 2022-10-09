@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Image from "next/future/image";
-import { useRouter } from "next/router";
 
 import {
   about_me,
@@ -9,10 +8,10 @@ import {
   about_me_links,
   my_name,
 } from "../texts";
-import { css_upwardAnimation } from "../css";
+import useAddAni from "../hooks/useAddAni";
 
 export default function About() {
-  const router = useRouter();
+  useAddAni("about");
   useEffect(() => {
     var newAbout = "";
     about_me.split("\n").forEach((para) => {
@@ -31,21 +30,7 @@ export default function About() {
 
     document.querySelector("#about article span").innerHTML = newAbout;
   }, []);
-  useEffect(() => {
-    var elem = document.querySelector("#about .contentful");
-    if (router.asPath == "/#about") {
-      elem.style.animation = css_upwardAnimation;
-      elem.style["animation-delay"] = `1s`;
-    } else {
-      document.addEventListener("scroll", function tempScroll() {
-        if (window.innerHeight - elem.getBoundingClientRect().top >= 200) {
-          // elem.style["animation-play-state"] = "running";
-          elem.style.animation = css_upwardAnimation;
-          document.removeEventListener("scroll", tempScroll);
-        }
-      });
-    }
-  }, []);
+
   return (
     <section id="about" aria-label="About">
       <div className="contentful">

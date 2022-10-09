@@ -11,15 +11,13 @@ import {
   my_name,
   my_whatsapp,
 } from "../texts";
-import { css_upwardAnimation } from "../css";
 
 export default function MainLeft({ divID, divClass }) {
   useEffect(() => {
     var forAnimation = document.querySelector("#main > #main-left");
-    forAnimation.style["animation"] = css_upwardAnimation;
-    forAnimation.style["animation-delay"] = `${
-      parseInt(css_upwardAnimation.split(" ")[3].replace("s", "")) + 1.3
-    }s`;
+    forAnimation.style[
+      "animation"
+    ] = `upwardAnimation 0.8s ease 1.3s 1 normal forwards`;
   }, []);
   return (
     <div id={divID} className={divClass}>

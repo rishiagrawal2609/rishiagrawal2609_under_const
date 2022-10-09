@@ -4,6 +4,12 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
 };
 

@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import React, { useState } from "react";
 import { experiences, experience_heading } from "../texts";
-import { css_upwardAnimation } from "../css";
+import useAddAni from "../hooks/useAddAni";
 
 export default function Experience() {
   const [currentExp, setCurrentExp] = useState(0);
-  const router = useRouter();
-  useEffect(() => {
-    var elem = document.querySelector("#experience .contentful");
-    if (router.asPath == "/#experience") {
-      elem.style.animation = css_upwardAnimation;
-      elem.style["animation-delay"] = `1s`;
-    } else {
-      document.addEventListener("scroll", function tempScroll() {
-        if (window.innerHeight - elem.getBoundingClientRect().top >= 200) {
-          // elem.style["animation-play-state"] = "running";
-          elem.style.animation = css_upwardAnimation;
-          document.removeEventListener("scroll", tempScroll);
-        }
-      });
-    }
-  }, []);
+  useAddAni("experience");
   return (
     <section id="experience" aria-label="Experience">
       <div className="contentful">

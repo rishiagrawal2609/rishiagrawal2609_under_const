@@ -7,6 +7,7 @@ import About from "../components/sections/About.js";
 import Experience from "../components/sections/Experience.js";
 import Work from "../components/sections/Work";
 import Contact from "../components/sections/Contact.js";
+import Photography from "../components/sections/Photography.js";
 
 import Header from "../components/_parts/Header.js";
 import MainLeft from "../components/_parts/MainLeft.js";
@@ -21,16 +22,25 @@ export default function Main() {
   useEffect(() => {
     // window.scrollTo(0, 0);
     function mainFun() {
+      var allSections = document.querySelectorAll("#main > section");
+      var styleForHeight = document.createElement("style");
+      styleForHeight.classList.add("page-height-style");
+      styleForHeight.innerHTML = `
+        @media screen and (min-width: 900px) {
+          #main {
+            height: ${allSections.length * 100}vh;
+          }
+        }
+        `;
+      document.body.appendChild(styleForHeight);
       if (window.innerWidth > 900) {
-        var allSections = document.querySelectorAll("#main > section");
-
         allSections.forEach((section, index) => {
           section.style.top = `${window.innerHeight * index}px`;
           section.style["z-index"] = index + 1;
         });
 
         for (let i = 1; i <= allSections.length - 1; i++) {
-          window.addEventListener("scroll", () => {
+          window.addEventListener("scroll", (e) => {
             if (window.innerHeight * i - window.pageYOffset >= 0) {
               allSections[i].style.top =
                 window.innerHeight * i - window.pageYOffset + "px";
@@ -48,6 +58,7 @@ export default function Main() {
                     parseInt(allSections[i].style.top.replace("px", "")) -
                     1 +
                     "px";
+                  window.scrollTo(window.scrollX, window.scrollY + 1);
                 } else {
                   clearInterval(temp);
                 }
@@ -70,6 +81,7 @@ export default function Main() {
                     parseInt(allSections[i].style.top.replace("px", "")) +
                     1 +
                     "px";
+                  window.scrollTo(window.scrollX, window.scrollY - 1);
                 } else {
                   clearInterval(temp);
                 }
@@ -102,12 +114,20 @@ export default function Main() {
               targetIndex = index;
             }
           });
+          for (let i = 0; i < targetIndex; i++) {
+            allSections[i].style.top = 0;
+          }
           // console.log(targetIndex);
           window.scrollTo({
             left: window.pageXOffset,
             top: window.innerHeight * targetIndex,
-            behavior: "smooth",
+            // behavior: "smooth",
           });
+          // window.scrollTo({
+          //   left: window.pageXOffset,
+          //   top: window.pageYOffset + 1,
+          //   behavior: "smooth",
+          // });
         }
       }
     }
@@ -144,6 +164,7 @@ export default function Main() {
         <About />
         <Experience />
         <Work />
+        <Photography />
         <Contact />
       </>
       <>

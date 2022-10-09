@@ -73,7 +73,7 @@ export default function Header() {
         className="no-pc for-blur"
         onClick={() => {
           setNavActive(false);
-          console.log("jjj");
+          // console.log("jjj");
         }}
       ></div>
       <div
@@ -102,6 +102,9 @@ export default function Header() {
         </Link>
         <Link href="/#work">
           <a aria-label={"Work by " + my_name}>Work</a>
+        </Link>
+        <Link href="/#extra-curricular">
+          <a aria-label={"extra-curricular " + my_name}>Extra-curricular</a>
         </Link>
         <Link href="/#contact">
           <a aria-label={"Contact " + my_name}>Contact</a>

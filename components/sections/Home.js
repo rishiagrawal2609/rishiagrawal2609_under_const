@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { css_upwardAnimation } from "../css";
 
 import {
   home_desc,
@@ -33,10 +32,9 @@ export default function Home() {
       document.querySelector("#home main").appendChild(elem);
     }
     var forAnimation = document.querySelector("#home main");
-    forAnimation.style["animation"] = css_upwardAnimation;
-    forAnimation.style["animation-delay"] = `${
-      parseInt(css_upwardAnimation.split(" ")[3].replace("s", "")) + 0.8
-    }s`;
+    forAnimation.style[
+      "animation"
+    ] = `upwardAnimation 0.8s ease 0.8s 1 normal forwards`;
   }, []);
   return (
     <section id="home" aria-label="Home">
