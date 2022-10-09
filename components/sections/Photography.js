@@ -4,6 +4,7 @@ import useAddAni from "../hooks/useAddAni";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { extra_heading, my_name } from "../texts";
 
 var images = [];
 function importAll(r) {
@@ -31,50 +32,25 @@ export default function Photography() {
     },
   };
   const [currentSlide, setCurrentSlide] = useState(-1);
-  const [nextSlide, setNextSlide] = useState(-1);
   var refff = useRef();
   useEffect(() => {
-    console.log(currentSlide, "current effext");
-    console.log(nextSlide, "next effext");
-    if (currentSlide != -1 && nextSlide != -1) {
-      if (document.querySelector(".gallery-pre-style") != null) {
-        document.querySelector(".gallery-pre-style").remove();
-      }
-      var currentPicHolder = document.querySelector(
-        `.carousel-item-class:nth-child(${
-          window.innerHeight < 900 ? currentSlide + 4 : currentSlide + 2
-        })`
-      );
-      var NextPicHolder = document.querySelector(
-        `.carousel-item-class:nth-child(${
-          window.innerHeight < 900
-            ? nextSlide > currentSlide
-              ? currentSlide + 4 + 1
-              : currentSlide - 4 + 1
-            : nextSlide > currentSlide
-            ? currentSlide + 2 - 1
-            : currentSlide - 2 - 1
-        })`
-      );
-      if (currentPicHolder.classList.contains("middle-pic")) {
-        currentPicHolder.classList.remove("middle-pic");
-      }
-      NextPicHolder.classList.add("middle-pic");
-    } else {
-      try {
-        var gallery = document.querySelector(".pictures");
-        var preStyle = document.createElement("style");
-        preStyle.classList.add("gallery-pre-style");
-        preStyle.innerHTML = `
-        .carousel-item-class:nth-child(${window.innerHeight < 900 ? 7 : 8}){
-          height: 55vh !important;
+    var activeElems = document.querySelectorAll('li[aria-hidden*="false"]');
+    if (activeElems.length != 0) {
+      activeElems.forEach((elem) => {
+        if (elem.classList.contains("middle-pic")) {
+          elem.classList.remove("middle-pic");
         }
-        `;
-        gallery.appendChild(preStyle);
-      } catch {}
+      });
+      if (activeElems.length == 3) {
+        // for PC
+        activeElems[1].classList.add("middle-pic");
+      }
+      if (activeElems.length == 1) {
+        //for mobile
+        activeElems[0].classList.add("middle-pic");
+      }
     }
-  }, [currentSlide, nextSlide, refff]);
-
+  }, [refff, currentSlide]);
   useAddAni("extra-curricular");
   console.log(images);
 
@@ -82,7 +58,7 @@ export default function Photography() {
     <section id="extra-curricular">
       <div className="contentful-different">
         <h2>Extra-curricular</h2>
-        <span>Photography</span>
+        <span>{extra_heading}</span>
         <div className="pictures">
           <Carousel
             swipeable={true}
@@ -103,25 +79,40 @@ export default function Photography() {
             className="photo-carousel"
             ssr={true}
             ref={(el) => (refff = el)}
-            beforeChange={(nextSlide, { currentSlide, onMove }) => {
-              // doSpeicalThing();
-              setCurrentSlide(currentSlide);
-              setNextSlide(nextSlide);
-            }}
-            afterChange={(previousSlide, { currentSlide, onMove }) => {
-              // doSpeicalThing();
+            beforeChange={(nextSlide) => {
+              setCurrentSlide(nextSlide);
             }}
           >
             {images.map((img, ind) => {
               return (
-                <div className="gallery-img-container" key={ind}>
+                <a
+                  className="gallery-img-container"
+                  key={ind}
+                  href="https://photos.app.goo.gl/U8yYDxEZQ5dEuqF19"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={
+                    my_name +
+                    " | Photography | Extracurricular | Extra-curricular"
+                  }
+                >
                   <Image
                     src={img.default.src}
-                    alt=""
+                    alt={
+                      my_name +
+                      " | Photography | Extracurricular | Extra-curricular"
+                    }
                     fill
                     className="gallery-img"
+                    onLoad={({ target }) => {
+                      const { naturalWidth, naturalHeight } = target;
+                      console.log(naturalHeight, naturalWidth);
+                      target.classList.add(
+                        `HxW=${naturalHeight}x${naturalWidth}`
+                      );
+                    }}
                   />
-                </div>
+                </a>
               );
             })}
           </Carousel>

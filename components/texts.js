@@ -116,6 +116,9 @@ export const experiences = [
 //    website - the website of the company - it can be null also
 //    list - points you wanna mention - its an array of strings - ["", "", ...] - cannot be null
 
+//EXTRA-CURRICULAR PAGE
+export const extra_heading = "Photography";
+
 //CONTACT PAGE
 export const cont_heading_one = "What's Next?"; // cannot be null
 export const cont_heading_two = "Get In Touch."; // cannot be null
