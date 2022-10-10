@@ -1036,37 +1036,23 @@ header > a {
           animation: none;
 }
 #contact > .contentful > a button {
-  cursor: pointer;
-  color: inherit;
-  width: 100%;
-  height: 100%;
-  padding: 15px 20px;
-  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
   border-radius: 5px;
-  border: 2px solid var(--secondary-grey-one);
-  font-size: medium;
+  padding: 10px 15px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--primary-grey-two);
+  transition: all 0.3s ease;
+  font-weight: 400;
+  font-family: var(--font-mono);
 }
-#contact > .contentful > a button:hover::after, #contact > .contentful > a button:focus::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
+#contact > .contentful > a:hover button, #contact > .contentful > a:focus button,
+#contact > .contentful > a button:hover,
+#contact > .contentful > a button:focus {
   background-color: var(--secondary-grey-one);
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-#contact > .contentful > a:focus button::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: var(--secondary-grey-one);
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  border: 1px solid black;
+  color: black;
 }
 #contact > footer {
   position: absolute;
@@ -1120,43 +1106,6 @@ header > a {
     width: fit-content;
     color: white;
   }
-  #contact > .contentful > a::after {
-    -webkit-animation: none;
-            animation: none;
-  }
-  #contact > .contentful > a button {
-    cursor: pointer;
-    color: inherit;
-    width: 100%;
-    height: 100%;
-    padding: 15px 20px;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 5px;
-    border: 2px solid var(--secondary-grey-one);
-    font-size: medium;
-  }
-  #contact > .contentful > a button:hover::after, #contact > .contentful > a button:focus::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: var(--secondary-grey-one);
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  #contact > .contentful > a:focus button::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: var(--secondary-grey-one);
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
   #contact > footer {
     font-size: small;
     text-align: center;
@@ -1181,25 +1130,14 @@ header > a {
   color: white;
   position: absolute;
   text-align: center;
-  width: 20vw;
   display: flex;
   justify-content: center;
-  left: calc(50% - 10vw);
 }
 #extra-curricular .contentful-different h2 {
-  top: 12.5%;
-  font-size: 1.25rem;
-  font-weight: normal;
   color: var(--secondary-grey-one);
 }
 #extra-curricular .contentful-different h2::after {
   content: none;
-}
-#extra-curricular .contentful-different span {
-  top: 17.5%;
-  font-size: 2rem;
-  letter-spacing: 5px;
-  font-weight: 600;
 }
 #extra-curricular .contentful-different .pictures {
   height: 100vh;
@@ -1229,9 +1167,6 @@ header > a {
   width: 100%;
   overflow: hidden;
 }
-#extra-curricular .contentful-different .pictures .photo-carousel ul .middle-pic {
-  padding: 10px;
-}
 #extra-curricular .contentful-different .pictures .react-multi-carousel-item--active,
 #extra-curricular .contentful-different .pictures .react-multi-carousel-item--active * {
   transition: height 0.425s ease-in-out, transform 0.425s ease-in-out, padding 0.425s ease-in-out;
@@ -1239,8 +1174,27 @@ header > a {
 #extra-curricular .contentful-different .btns {
   position: absolute;
   z-index: 999;
-  bottom: 11%;
-  left: 50%;
+  bottom: 9%;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#extra-curricular .contentful-different .btns button {
+  margin: 10px 20px;
+  cursor: pointer;
+  background: var(--secondary-grey-one);
+  padding: 10px;
+  border: 0px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 15px -3px white;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
 }
 
 @media screen and (min-width: 900px) {
@@ -1248,7 +1202,7 @@ header > a {
     content: "";
     height: 25%;
     width: 100%;
-    background-color: var(--primary-grey-two);
+    background: linear-gradient(var(--primary-grey-two), var(--primary-grey-one));
     position: absolute;
     top: 0;
     left: 0%;
@@ -1259,12 +1213,28 @@ header > a {
     content: "";
     height: 25%;
     width: 100%;
-    background-color: var(--primary-grey-two);
+    background: linear-gradient(var(--primary-grey-one), var(--primary-grey-two));
     position: absolute;
     bottom: 0;
     left: 0%;
     z-index: 0;
     border-radius: 50% 50% 25% 25%/100% 100% 0% 0%;
+  }
+  #extra-curricular .contentful-different h2,
+#extra-curricular .contentful-different span {
+    width: 20vw;
+    left: calc(50% - 10vw);
+  }
+  #extra-curricular .contentful-different h2 {
+    top: 12.5%;
+    font-size: 1.25rem;
+    font-weight: normal;
+  }
+  #extra-curricular .contentful-different span {
+    top: 17.5%;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: 600;
   }
   #extra-curricular .contentful-different .pictures .photo-carousel ul .middle-pic {
     height: 55vh;
@@ -1273,6 +1243,9 @@ header > a {
   #extra-curricular .contentful-different .pictures .photo-carousel ul .gallery-img-container .gallery-img {
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  #extra-curricular .contentful-different .pictures .photo-carousel ul .middle-pic {
+    padding: 10px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -1298,12 +1271,30 @@ header > a {
     z-index: 0;
     border-radius: 50% 50% 25% 25%/100% 100% 0% 0%;
   }
+  #extra-curricular .contentful-different h2,
+#extra-curricular .contentful-different span {
+    width: 20vw;
+    left: calc(50% - 10vw);
+  }
+  #extra-curricular .contentful-different h2 {
+    top: 13%;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  #extra-curricular .contentful-different span {
+    top: 17.5%;
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+    font-weight: 600;
+  }
+  #extra-curricular .contentful-different .pictures .photo-carousel ul li {
+    height: 50vh;
+  }
   #extra-curricular .contentful-different .pictures .photo-carousel ul .middle-pic {
-    height: 100vh;
-    padding: 10px;
+    height: 50vh;
   }
   #extra-curricular .contentful-different .pictures .photo-carousel ul .gallery-img-container .gallery-img {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }/*# sourceMappingURL=styles.css.map */

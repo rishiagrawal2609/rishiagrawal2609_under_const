@@ -4,6 +4,8 @@ import useAddAni from "../hooks/useAddAni";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
 import { extra_heading, my_name } from "../texts";
 
 var images = [];
@@ -52,7 +54,7 @@ export default function Photography() {
     }
   }, [refff, currentSlide]);
   useAddAni("extra-curricular");
-  console.log(images);
+  // console.log(images);
 
   return (
     <section id="extra-curricular">
@@ -65,7 +67,7 @@ export default function Photography() {
             draggable={false}
             showDots={false}
             infinite={true}
-            autoPlay={false}
+            autoPlay={true}
             autoPlaySpeed={2500}
             keyBoardControl={true}
             pauseOnHover={true}
@@ -91,22 +93,16 @@ export default function Photography() {
                   href="https://photos.app.goo.gl/U8yYDxEZQ5dEuqF19"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={
-                    my_name +
-                    " | Photography | Extracurricular | Extra-curricular"
-                  }
+                  aria-label={`${my_name} | ${extra_heading} | Extracurricular | Extra-curricular`}
                 >
                   <Image
                     src={img.default.src}
-                    alt={
-                      my_name +
-                      " | Photography | Extracurricular | Extra-curricular"
-                    }
+                    alt={`${my_name} | ${extra_heading} | Extracurricular | Extra-curricular`}
                     fill
                     className="gallery-img"
                     onLoad={({ target }) => {
                       const { naturalWidth, naturalHeight } = target;
-                      console.log(naturalHeight, naturalWidth);
+                      // console.log(naturalHeight, naturalWidth);
                       target.classList.add(
                         `HxW=${naturalHeight}x${naturalWidth}`
                       );
@@ -120,19 +116,31 @@ export default function Photography() {
         <div className="btns">
           <button
             className="move left"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               refff.previous();
             }}
+            type="button"
           >
-            {"<-"}
+            <FiChevronLeft
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            />
           </button>
           <button
             className="moveright"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               refff.next();
             }}
+            type="button"
           >
-            {"->"}
+            <FiChevronRight
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            />
           </button>
         </div>
       </div>

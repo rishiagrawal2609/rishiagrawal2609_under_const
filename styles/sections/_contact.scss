@@ -1,6 +1,7 @@
 #contact {
   flex-direction: column;
   justify-content: unset;
+  // border-top: 1px solid var(--secondary-grey-one);
   & > .contentful {
     max-width: 550px;
     display: flex;
@@ -39,44 +40,24 @@
         animation: none;
       }
       button {
-        cursor: pointer;
-        color: inherit;
-        width: 100%;
-        height: 100%;
-        padding: 15px 20px;
-        background-color: rgba($color: #000000, $alpha: 0);
+        border: 1px solid white;
         border-radius: 5px;
-        border: 2px solid var(--secondary-grey-one);
-        font-size: medium;
-        &:hover,
-        &:focus {
-          &::after {
-            content: "";
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            background-color: var(--secondary-grey-one);
-            opacity: 0.2;
-            top: 0;
-            left: 0;
-            z-index: -1;
-          }
-        }
+        padding: 10px 15px;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: var(--primary-grey-two);
+        transition: all 0.3s ease;
+        font-weight: 400;
+        font-family: var(--font-mono);
       }
-      &:focus {
-        button {
-          &::after {
-            content: "";
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            background-color: var(--secondary-grey-one);
-            opacity: 0.2;
-            top: 0;
-            left: 0;
-            z-index: -1;
-          }
-        }
+      &:hover button,
+      &:focus button,
+      button:hover,
+      button:focus {
+        background-color: var(--secondary-grey-one);
+        border: 1px solid black;
+        color: black;
       }
     }
   }
@@ -130,49 +111,6 @@
         height: auto;
         width: fit-content;
         color: white;
-        &::after {
-          animation: none;
-        }
-        button {
-          cursor: pointer;
-          color: inherit;
-          width: 100%;
-          height: 100%;
-          padding: 15px 20px;
-          background-color: rgba($color: #000000, $alpha: 0);
-          border-radius: 5px;
-          border: 2px solid var(--secondary-grey-one);
-          font-size: medium;
-          &:hover,
-          &:focus {
-            &::after {
-              content: "";
-              height: 100%;
-              width: 100%;
-              position: absolute;
-              background-color: var(--secondary-grey-one);
-              opacity: 0.2;
-              top: 0;
-              left: 0;
-              z-index: -1;
-            }
-          }
-        }
-        &:focus {
-          button {
-            &::after {
-              content: "";
-              height: 100%;
-              width: 100%;
-              position: absolute;
-              background-color: var(--secondary-grey-one);
-              opacity: 0.2;
-              top: 0;
-              left: 0;
-              z-index: -1;
-            }
-          }
-        }
       }
     }
     & > footer {
