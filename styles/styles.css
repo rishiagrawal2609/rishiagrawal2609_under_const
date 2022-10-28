@@ -185,7 +185,7 @@ ul li::before {
 #main > section {
   min-height: 100vh;
   width: 100%;
-  padding: 100px 90px;
+  padding: 90px 90px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -291,7 +291,7 @@ ul li::before {
   position: fixed;
   bottom: 0%;
   width: 50px;
-  height: 40vh;
+  height: 350px;
   color: var(--secondary-grey-one);
 }
 #main-left .rule,
@@ -628,7 +628,7 @@ header > a {
 }
 #home main h1 span:nth-child(2) {
   font-family: var(--font-sans-poppins);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 4rem;
   color: white;
   letter-spacing: 3px;
@@ -638,6 +638,7 @@ header > a {
   font-family: var(--font-sans-poppins);
   color: var(--secondary-grey-one);
   position: relative;
+  font-weight: 700;
 }
 #home main h1 span {
   margin: 5px 0;
@@ -678,9 +679,10 @@ header > a {
 #about > .contentful {
   display: flex;
   opacity: 0;
+  height: 490px;
 }
 #about > .contentful > div {
-  height: 60vh;
+  height: 100%;
   margin: 0 10px;
   display: flex;
   justify-content: center;
@@ -688,6 +690,12 @@ header > a {
 }
 #about > .contentful h2::after {
   width: 12.5vw;
+}
+#about > .contentful span {
+  font-size: 1.05rem;
+}
+#about > .contentful li {
+  font-size: 0.9rem;
 }
 #about .about-me {
   max-width: 525px;
@@ -711,7 +719,6 @@ header > a {
   row-gap: 10px;
 }
 #about .about-me ul li {
-  font-size: 0.9rem;
   font-family: var(--font-mono);
 }
 #about .about-photo {
@@ -1296,5 +1303,106 @@ header > a {
   #extra-curricular .contentful-different .pictures .photo-carousel ul .gallery-img-container .gallery-img {
     -o-object-fit: contain;
        object-fit: contain;
+  }
+}
+#work .contentful {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 950px !important;
+}
+#work .contentful h2 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+#work .contentful h2::after {
+  width: 50%;
+}
+#work .contentful .work-carousel {
+  height: 500px;
+  width: 100%;
+}
+#work .contentful .work-carousel > ul {
+  height: 100%;
+}
+#work .contentful .work-carousel > ul > li {
+  height: 100%;
+}
+#work .contentful .work-carousel > ul > li::before {
+  content: none;
+}
+#work .contentful .work-carousel > ul > li .work-all {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#work .contentful .work-carousel > ul > li .work-all > div {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+#work .contentful .work-carousel > ul > li .work-all .picture_container {
+  border-radius: 5px;
+  overflow: hidden;
+  height: 300px;
+  margin: auto 0;
+}
+#work .contentful .work-carousel > ul > li .work-all .picture_container::before {
+  border-radius: 5px;
+  position: absolute;
+  content: "";
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: var(--secondary-grey-one);
+  mix-blend-mode: color;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s ease-out;
+}
+#work .contentful .work-carousel > ul > li .work-all .picture_container:hover::before, #work .contentful .work-carousel > ul > li .work-all .picture_container:focus::before {
+  opacity: 0;
+  visibility: hidden;
+}
+#work .contentful .work-carousel > ul > li .work-all .stuff_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+#work .contentful .work-carousel > ul > li .work-all .stuff_container a::after {
+  content: none;
+}
+#work .contentful .work-carousel > ul > li .work-all .stuff_container > * {
+  margin: 5px 0px;
+}
+#work .contentful .work-carousel > ul > li .work-all .stuff_container ul {
+  display: flex;
+  padding: 0;
+}
+#work .contentful .work-carousel > ul > li .work-all .stuff_container ul li::before {
+  content: none;
+}
+#work .contentful .work-carousel > ul > li .work-all .stuff_container ul li:nth-child(n+2) {
+  margin-left: 15px;
+}
+#work .contentful .work-carousel > ul > li:nth-child(odd) .work-all {
+  flex-direction: row;
+}
+#work .contentful .work-carousel > ul > li:nth-child(even) .work-all {
+  flex-direction: row-reverse;
+}
+
+@media screen and (min-width: 950px) {
+  #work .contentful {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 900px) {
+  #work .contentful {
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */

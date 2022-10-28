@@ -36,7 +36,9 @@ export default function Photography() {
   const [currentSlide, setCurrentSlide] = useState(-1);
   var refff = useRef();
   useEffect(() => {
-    var activeElems = document.querySelectorAll('li[aria-hidden*="false"]');
+    var activeElems = document.querySelectorAll(
+      '#extra-curricular li[aria-hidden*="false"]'
+    );
     if (activeElems.length != 0) {
       activeElems.forEach((elem) => {
         if (elem.classList.contains("middle-pic")) {
@@ -93,6 +95,7 @@ export default function Photography() {
                   href="https://photos.app.goo.gl/U8yYDxEZQ5dEuqF19"
                   target="_blank"
                   rel="noopener noreferrer"
+                  as="image"
                   aria-label={`${my_name} | ${extra_heading} | Extracurricular | Extra-curricular`}
                 >
                   <Image
@@ -100,6 +103,7 @@ export default function Photography() {
                     alt={`${my_name} | ${extra_heading} | Extracurricular | Extra-curricular`}
                     fill
                     className="gallery-img"
+                    quality={50}
                     onLoad={({ target }) => {
                       const { naturalWidth, naturalHeight } = target;
                       // console.log(naturalHeight, naturalWidth);
@@ -107,6 +111,7 @@ export default function Photography() {
                         `HxW=${naturalHeight}x${naturalWidth}`
                       );
                     }}
+                    sizes={"100%"}
                   />
                 </a>
               );

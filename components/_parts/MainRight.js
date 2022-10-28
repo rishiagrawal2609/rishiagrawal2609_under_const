@@ -12,7 +12,7 @@ export default function MainRight() {
     <div id="main-right" className="only-pc">
       {my_email != "" && my_email != null && (
         <>
-          <a href={`mailto:${my_email}`}>android.gobind@gmail.com</a>
+          <a href={`mailto:${my_email}`}>{my_email}</a>
           <div className="rule"></div>
         </>
       )}

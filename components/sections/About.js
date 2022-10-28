@@ -59,6 +59,7 @@ export default function About() {
               fill
               className="nextImg"
               alt={my_name}
+              sizes="100%"
             />
           </div>
         </div>

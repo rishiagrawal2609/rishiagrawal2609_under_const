@@ -13,7 +13,7 @@ export const my_resume_file = "resume.pdf"; // can be null
 // if you wanna show your resume put that file in public folder and change my_resume_file value to its name
 
 //SOCIALS
-export const my_email = "android.gobind@gmail.com"; // can be null
+export const my_email = "thesinghgobind@gmail.com"; // can be null
 export const my_whatsapp = "+919415507316"; // can be null
 export const my_github = "theGobindSingh"; // can be null
 export const my_instagram = "theGobindSingh"; // can be null
@@ -115,6 +115,41 @@ export const experiences = [
 //    duration - the time period in which you worked in the company
 //    website - the website of the company - it can be null also
 //    list - points you wanna mention - its an array of strings - ["", "", ...] - cannot be null
+
+//WORK PAGE
+export const work_heading = "Some things I've built";
+export const work_projects = [
+  {
+    title: "Expense Tracker",
+    desc: "Tracks and computes your expenses. A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+    tech_stack: ["Reactttttttt", "CSS"],
+    picture: "expense_tracker.png",
+    links: {
+      github: null,
+      website: "https://google.com",
+    },
+  },
+  {
+    title: "Testttttt",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis mollitia dolorum enim aspernatur et dolor fuga necessitatibus pariatur earum, voluptates quae ex totam, natus libero esse saepe, aut odit cumque quas. Tempora eveniet provident consequatur?",
+    tech_stack: ["Reactttttt", "CSS", "React", "CSS"],
+    picture: "expense_tracker.png",
+    links: {
+      github: "https://google.com",
+      website: "https://google.com",
+    },
+  },
+  {
+    title: "Expense Tracker",
+    desc: "Tracks and computes your expenses. A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+    tech_stack: ["React", "CSS"],
+    picture: "expense_tracker.png",
+    links: {
+      github: null,
+      website: "https://google.com",
+    },
+  },
+];
 
 //EXTRA-CURRICULAR PAGE
 export const extra_heading = "Photography";

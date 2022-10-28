@@ -28,7 +28,7 @@
       }
       span:nth-child(2) {
         font-family: var(--font-sans-poppins);
-        font-weight: 600;
+        font-weight: 700;
         font-size: 4rem;
         color: white;
         letter-spacing: 3px;
@@ -38,6 +38,7 @@
         font-family: var(--font-sans-poppins);
         color: var(--secondary-grey-one);
         position: relative;
+        font-weight: 700;
         // &::after {
         //   animation: cursorAni 1.2s ease 0s infinite normal forwards;
         //   content: "";
