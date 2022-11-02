@@ -785,6 +785,9 @@ header > a {
 @media screen and (max-width: 900px) {
   #about > .contentful {
     flex-direction: column;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #about > .contentful h2 {
     font-size: 1.7rem;
@@ -1000,6 +1003,7 @@ header > a {
 }
 #contact > .contentful {
   max-width: 550px;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1209,7 +1213,7 @@ header > a {
     content: "";
     height: 25%;
     width: 100%;
-    background: linear-gradient(var(--primary-grey-two), var(--primary-grey-one));
+    background: linear-gradient(var(--primary-grey-one), var(--primary-grey-two));
     position: absolute;
     top: 0;
     left: 0%;
@@ -1220,7 +1224,7 @@ header > a {
     content: "";
     height: 25%;
     width: 100%;
-    background: linear-gradient(var(--primary-grey-one), var(--primary-grey-two));
+    background: linear-gradient(var(--primary-grey-two), var(--primary-grey-one));
     position: absolute;
     bottom: 0;
     left: 0%;
@@ -1256,28 +1260,6 @@ header > a {
   }
 }
 @media screen and (max-width: 900px) {
-  #extra-curricular .contentful-different::before {
-    content: "";
-    height: 25%;
-    width: 100%;
-    background-color: var(--primary-grey-two);
-    position: absolute;
-    top: 0;
-    left: 0%;
-    z-index: 0;
-    border-radius: 25% 25% 50% 50%/0% 0% 100% 100%;
-  }
-  #extra-curricular .contentful-different::after {
-    content: "";
-    height: 25%;
-    width: 100%;
-    background-color: var(--primary-grey-two);
-    position: absolute;
-    bottom: 0;
-    left: 0%;
-    z-index: 0;
-    border-radius: 50% 50% 25% 25%/100% 100% 0% 0%;
-  }
   #extra-curricular .contentful-different h2,
 #extra-curricular .contentful-different span {
     width: 20vw;
@@ -1305,104 +1287,324 @@ header > a {
        object-fit: contain;
   }
 }
-#work .contentful {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 950px !important;
-}
-#work .contentful h2 {
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-#work .contentful h2::after {
-  width: 50%;
-}
-#work .contentful .work-carousel {
-  height: 500px;
-  width: 100%;
-}
-#work .contentful .work-carousel > ul {
-  height: 100%;
-}
-#work .contentful .work-carousel > ul > li {
-  height: 100%;
-}
-#work .contentful .work-carousel > ul > li::before {
-  content: none;
-}
-#work .contentful .work-carousel > ul > li .work-all {
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
-#work .contentful .work-carousel > ul > li .work-all > div {
-  width: 50%;
-  height: 100%;
-  position: relative;
-}
-#work .contentful .work-carousel > ul > li .work-all .picture_container {
-  border-radius: 5px;
-  overflow: hidden;
-  height: 300px;
-  margin: auto 0;
-}
-#work .contentful .work-carousel > ul > li .work-all .picture_container::before {
-  border-radius: 5px;
-  position: absolute;
-  content: "";
-  z-index: 2;
-  height: 100%;
-  width: 100%;
-  background-color: var(--secondary-grey-one);
-  mix-blend-mode: color;
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.2s ease-out;
-}
-#work .contentful .work-carousel > ul > li .work-all .picture_container:hover::before, #work .contentful .work-carousel > ul > li .work-all .picture_container:focus::before {
-  opacity: 0;
-  visibility: hidden;
-}
-#work .contentful .work-carousel > ul > li .work-all .stuff_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-}
-#work .contentful .work-carousel > ul > li .work-all .stuff_container a::after {
-  content: none;
-}
-#work .contentful .work-carousel > ul > li .work-all .stuff_container > * {
-  margin: 5px 0px;
-}
-#work .contentful .work-carousel > ul > li .work-all .stuff_container ul {
-  display: flex;
-  padding: 0;
-}
-#work .contentful .work-carousel > ul > li .work-all .stuff_container ul li::before {
-  content: none;
-}
-#work .contentful .work-carousel > ul > li .work-all .stuff_container ul li:nth-child(n+2) {
-  margin-left: 15px;
-}
-#work .contentful .work-carousel > ul > li:nth-child(odd) .work-all {
-  flex-direction: row;
-}
-#work .contentful .work-carousel > ul > li:nth-child(even) .work-all {
-  flex-direction: row-reverse;
-}
-
 @media screen and (min-width: 950px) {
   #work .contentful {
-    width: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    width: 950px !important;
+  }
+  #work .contentful h2 {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  #work .contentful h2::after {
+    width: 50%;
+  }
+  #work .contentful .work-carousel {
+    height: 500px;
+    width: 100%;
+  }
+  #work .contentful .work-carousel > ul {
+    height: 100%;
+  }
+  #work .contentful .work-carousel > ul > li {
+    height: 100%;
+  }
+  #work .contentful .work-carousel > ul > li::before {
+    content: none;
+  }
+  #work .contentful .work-carousel > ul > li .work-all {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  #work .contentful .work-carousel > ul > li .work-all > div {
+    width: 50%;
+    position: relative;
+    opacity: 0;
+    scale: 0.8;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .picture_container {
+    border-radius: 5px;
+    overflow: hidden;
+    height: 300px;
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .picture_container::before {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-grey-one);
+    mix-blend-mode: color;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease-out;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .picture_container:hover::before, #work .contentful .work-carousel > ul > li .work-all .picture_container:focus::before {
+    opacity: 0;
+    visibility: hidden;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    min-height: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--primary-grey-one);
+    box-shadow: 0 0 20px -5px grey;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container a::after {
+    content: none;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container > * {
+    margin: 5px 0px;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container ul {
+    display: flex;
+    padding: 0;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container ul li::before {
+    content: none;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container ul li:nth-child(n+2) {
+    margin-left: 15px;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container div {
+    font-size: 1.4rem;
+    display: flex;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container div > * {
+    margin-right: 10px;
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      scale: 0.8;
+      opacity: 0;
+    }
+    100% {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      scale: 0.8;
+      opacity: 0;
+    }
+    100% {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  #work .contentful .work-carousel > ul > li.react-multi-carousel-item--active .picture_container {
+    -webkit-animation: fadeIn 1.2s ease 0.4s 1 normal forwards;
+            animation: fadeIn 1.2s ease 0.4s 1 normal forwards;
+  }
+  #work .contentful .work-carousel > ul > li.react-multi-carousel-item--active .stuff_container {
+    -webkit-animation: fadeIn 1.2s ease 0.6s 1 normal forwards;
+            animation: fadeIn 1.2s ease 0.6s 1 normal forwards;
+  }
+  #work .contentful .work-carousel > ul > li:nth-child(odd) .work-all {
+    flex-direction: row;
+  }
+  #work .contentful .work-carousel > ul > li:nth-child(odd) .work-all .stuff_container {
+    margin-left: -20px;
+  }
+  #work .contentful .work-carousel > ul > li:nth-child(even) .work-all {
+    flex-direction: row-reverse;
+  }
+  #work .contentful .work-carousel > ul > li:nth-child(even) .work-all .stuff_container {
+    margin-right: -20px;
+  }
+  #work .contentful > .work-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #work .contentful > .work-btns button {
+    cursor: pointer;
+    margin: 10px 20px;
+    background: var(--secondary-grey-one);
+    padding: 10px;
+    border: 0px solid black;
+    border-radius: 50%;
+    box-shadow: 0 0 15px -3px white;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  #work .contentful > .work-btns button:disabled {
+    background: var(--secondary-grey-two);
+    box-shadow: 0 0 15px -3px grey;
+    cursor: not-allowed;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   #work .contentful {
+    opacity: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+  #work .contentful h2 {
     width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  #work .contentful h2::after {
+    width: 50%;
+  }
+  #work .contentful .work-carousel {
+    height: 70vh;
+    width: 100%;
+  }
+  #work .contentful .work-carousel > ul {
+    height: 100%;
+  }
+  #work .contentful .work-carousel > ul > li {
+    height: 100%;
+  }
+  #work .contentful .work-carousel > ul > li::before {
+    content: none;
+  }
+  #work .contentful .work-carousel > ul > li .work-all {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #work .contentful .work-carousel > ul > li .work-all > div {
+    width: 90%;
+    position: relative;
+    opacity: 0;
+    scale: 0.8;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .picture_container {
+    border-radius: 5px;
+    overflow: hidden;
+    height: 50vw;
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    min-height: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--primary-grey-one);
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container a::after {
+    content: none;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container > * {
+    margin: 5px 0px;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container ul {
+    display: flex;
+    padding: 0;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container ul li::before {
+    content: none;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container ul li:nth-child(n+2) {
+    margin-left: 15px;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container div {
+    font-size: 1.4rem;
+    display: flex;
+  }
+  #work .contentful .work-carousel > ul > li .work-all .stuff_container div > * {
+    margin-right: 10px;
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      scale: 0.8;
+      opacity: 0;
+    }
+    100% {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      scale: 0.8;
+      opacity: 0;
+    }
+    100% {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  #work .contentful .work-carousel > ul > li.react-multi-carousel-item--active .picture_container {
+    -webkit-animation: fadeIn 1.2s ease 0.4s 1 normal forwards;
+            animation: fadeIn 1.2s ease 0.4s 1 normal forwards;
+  }
+  #work .contentful .work-carousel > ul > li.react-multi-carousel-item--active .stuff_container {
+    -webkit-animation: fadeIn 1.2s ease 0.6s 1 normal forwards;
+            animation: fadeIn 1.2s ease 0.6s 1 normal forwards;
+  }
+  #work .contentful > .work-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #work .contentful > .work-btns button {
+    cursor: pointer;
+    margin: 10px 20px;
+    background: var(--secondary-grey-one);
+    padding: 10px;
+    border: 0px solid black;
+    border-radius: 50%;
+    box-shadow: 0 0 15px -3px white;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  #work .contentful > .work-btns button:disabled {
+    background: var(--secondary-grey-two);
+    box-shadow: 0 0 15px -3px grey;
+    cursor: not-allowed;
   }
 }/*# sourceMappingURL=styles.css.map */

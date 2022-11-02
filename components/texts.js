@@ -36,17 +36,14 @@ export const home_links = [
 
 //ABOUT PAGE
 // you can use backtick -> ` <- if you want to write multiple lines/paragraphs in about me, just as I have used
-export const about_me = `Hello! My name is Gobind and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+export const about_me = `Hello! My name is Gobind and I enjoy creating things that live on the internet; A developer & geek from India, who loves MCU and Anime. I'm currently an intern in Bajaj Finserv Health as a Web Developer. I have previously worked with a startup and a software development company.
 
-Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.
-
-I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.`;
+Apart from nerdy stuff, I love having a different perspective for seeing things and capturing those with my camera. I try my best to pour life into ideas and bring them to the relm of reality. In the digital world, knowledge is infinite. I wish to keep on learning and practice everyday, but most importantly, I love working with diverse people.`;
 // about me cannout be null
 export const about_me_links = [
-  { text: "an advertising agency", link: "https://google.com" },
-  { text: "a start-up", link: "https://google.com" },
-  { text: "a huge corporation", link: "https://google.com" },
-  { text: "a student-led design studio", link: "https://google.com" },
+  { text: "Bajaj Finserv Health", link: "https://bajajfinservhealth.in" },
+  { text: "startup", link: "https://takemycar.us" },
+  { text: "software development company", link: "https://iraitech.com" },
 ]; //can be null
 //format: an array of objects [{}, {},...], each object will have 2 properties text and link -> {text:"", link: ""}
 //    text property will tell what text you want to be selected (every occurance will be selected)
@@ -54,8 +51,9 @@ export const about_me_links = [
 export const about_me_exp = [
   "JavaScript (ES6+)",
   "React",
-  "Node.js",
   "TypeScript",
+  "Next.js",
+  "Node.js",
 ];
 // about_me_exp is an array of technologies you have worked with
 // can only contain maximum of 10 elements
@@ -66,46 +64,30 @@ export const about_photo_name = "me.jpg";
 export const experience_heading = "Where I've Worked";
 export const experiences = [
   {
-    role: "Engineer",
-    company: "Upstatement",
-    duration: "May 2018 - Present",
-    website: "https://google.com", // can be null
+    role: "React Developer - Intern",
+    company: "Bajaj Finserv Health",
+    duration: "January 2023 - June 2023",
+    website: "https://www.bajajfinservhealth.in/", // can be null
+    list: ["--- Still to join the office ---"],
+  },
+  {
+    role: "Freelance Web Developer",
+    company: "TakeMyCar",
+    duration: "May 2022",
+    website: "https://takemycar.us", // can be null
     list: [
-      "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-      "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
-      "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
-      "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-      "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
-      "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+      "Developed an introductory website for the company.",
+      "Static website made with Next.js and Lottie Files.",
     ],
   },
   {
-    role: "Studio Developer",
-    company: "Scout",
-    duration: "now - Present",
-    website: null, // can be null
+    role: "Front-End Developer - Intern",
+    company: "Iraitech",
+    duration: "April 2022 - July 2022",
+    website: "https://iraitech.com", // can be null
     list: [
       "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-    ],
-  },
-  {
-    role: "fun",
-    company: "apple",
-    duration: "lololo",
-    website: "https://google.com", // can be null
-    list: [
-      "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-      "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
-    ],
-  },
-  {
-    role: "fun",
-    company: "lolaaaaaaa",
-    duration: "lololo",
-    website: "https://google.com", // can be null
-    list: [
-      "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-      "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+      "Worked closely with designers and management team to develop, document, and manage the projects.",
     ],
   },
 ]; // cannot be null
@@ -153,6 +135,9 @@ export const work_projects = [
 
 //EXTRA-CURRICULAR PAGE
 export const extra_heading = "Photography";
+//can be null
+//if null, it wont be there on website
+// I couldn't think of any way to make this customisable.. so im sorry :(
 
 //CONTACT PAGE
 export const cont_heading_one = "What's Next?"; // cannot be null

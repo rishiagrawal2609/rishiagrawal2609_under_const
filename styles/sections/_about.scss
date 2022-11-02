@@ -119,8 +119,10 @@
     // width: auto !important;
 
     // padding-bottom: 0 !important;
+
     & > .contentful {
       flex-direction: column;
+      height: fit-content;
       h2 {
         font-size: 1.7rem;
         &::after {

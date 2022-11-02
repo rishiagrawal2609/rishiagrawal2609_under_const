@@ -7,7 +7,7 @@ import About from "../components/sections/About.js";
 import Experience from "../components/sections/Experience.js";
 import Work from "../components/sections/Work";
 import Contact from "../components/sections/Contact.js";
-import Photography from "../components/sections/Photography.js";
+import Extra from "../components/sections/Extra.js";
 
 import Header from "../components/_parts/Header.js";
 import MainLeft from "../components/_parts/MainLeft.js";
@@ -164,7 +164,7 @@ export default function Main() {
         <About />
         <Experience />
         <Work />
-        <Photography />
+        <Extra />
         <Contact />
       </>
       <>

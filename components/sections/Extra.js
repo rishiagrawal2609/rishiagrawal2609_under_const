@@ -7,6 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import { extra_heading, my_name } from "../texts";
+import { useRouter } from "next/router";
 
 var images = [];
 function importAll(r) {
@@ -34,6 +35,28 @@ export default function Photography() {
     },
   };
   const [currentSlide, setCurrentSlide] = useState(-1);
+  const [onPage, setOnPage] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    if (router.asPath.includes("extra")) {
+      setOnPage(true);
+    }
+  }, [router]);
+  useEffect(() => {
+    if (window.innerWidth > 900) {
+      var workTarget = document.querySelector("#extra-curricular");
+      document.addEventListener("scroll", function tempVarExtra(e) {
+        // console.log(workTarget.style.top);
+        if (parseInt(workTarget.style.top.replace("px", "")) < 800) {
+          setOnPage(true);
+          document.removeEventListener("scroll", tempVarExtra);
+          // e.target.removeEventListener();
+        }
+      });
+    } else {
+      setOnPage(true);
+    }
+  }, []);
   var refff = useRef();
   useEffect(() => {
     var activeElems = document.querySelectorAll(
@@ -69,7 +92,7 @@ export default function Photography() {
             draggable={false}
             showDots={false}
             infinite={true}
-            autoPlay={true}
+            autoPlay={onPage}
             autoPlaySpeed={2500}
             keyBoardControl={true}
             pauseOnHover={true}
@@ -82,7 +105,27 @@ export default function Photography() {
             itemClass="carousel-item-class"
             className="photo-carousel"
             ssr={true}
-            ref={(el) => (refff = el)}
+            ref={(el) => {
+              var activeElems = document.querySelectorAll(
+                '#extra-curricular li[aria-hidden*="false"]'
+              );
+              if (activeElems.length != 0) {
+                activeElems.forEach((elem) => {
+                  if (elem.classList.contains("middle-pic")) {
+                    elem.classList.remove("middle-pic");
+                  }
+                });
+                if (activeElems.length == 3) {
+                  // for PC
+                  activeElems[1].classList.add("middle-pic");
+                }
+                if (activeElems.length == 1) {
+                  //for mobile
+                  activeElems[0].classList.add("middle-pic");
+                }
+              }
+              refff = el;
+            }}
             beforeChange={(nextSlide) => {
               setCurrentSlide(nextSlide);
             }}
