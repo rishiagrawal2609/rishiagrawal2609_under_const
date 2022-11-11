@@ -17,7 +17,7 @@ export default function MainLeft({ divID, divClass }) {
     var forAnimation = document.querySelector("#main > #main-left");
     forAnimation.style[
       "animation"
-    ] = `upwardAnimation 0.8s ease 1.3s 1 normal forwards`;
+    ] = `upwardAnimation 0.8s ease 0.3s 1 normal forwards`;
   }, []);
   return (
     <div id={divID} className={divClass}>

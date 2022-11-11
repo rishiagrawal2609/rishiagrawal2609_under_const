@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/future/image";
 import useAddAni from "../hooks/useAddAni";
 

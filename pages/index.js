@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 import Home from "../components/sections/Home.js";
 import About from "../components/sections/About.js";
@@ -16,7 +17,7 @@ import MainRight from "../components/_parts/MainRight.js";
 import { FiX } from "react-icons/fi";
 import { home_desc } from "../components/texts.js";
 
-export default function Main() {
+export default function Main({ footerData }) {
   const router = useRouter();
   const [popupVisible, setPopupViz] = useState(false);
   useEffect(() => {
@@ -165,7 +166,7 @@ export default function Main() {
         <Experience />
         <Work />
         <Extra />
-        <Contact />
+        <Contact footerData={footerData} />
       </>
       <>
         <MainLeft divID={"main-left"} divClass={"only-pc"} />
@@ -173,4 +174,15 @@ export default function Main() {
       </>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  var res = await axios.get(
+    "https://api.github.com/repos/theGobindSingh/theGobindSingh"
+  );
+  return {
+    props: {
+      footerData: res.data,
+    },
+  };
 }

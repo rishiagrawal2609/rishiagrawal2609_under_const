@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import useAddAni from "../hooks/useAddAni";
 
 import {
   home_desc,
@@ -9,6 +10,7 @@ import {
 } from "../texts";
 
 export default function Home() {
+  useAddAni("home");
   useEffect(() => {
     if (
       document.querySelector("#home main p") == undefined &&
@@ -31,14 +33,14 @@ export default function Home() {
       elem.innerHTML = homeDesc;
       document.querySelector("#home main").appendChild(elem);
     }
-    var forAnimation = document.querySelector("#home main");
-    forAnimation.style[
-      "animation"
-    ] = `upwardAnimation 0.8s ease 0.8s 1 normal forwards`;
+    // var forAnimation = document.querySelector("#home main");
+    // forAnimation.style[
+    //   "animation"
+    // ] = `upwardAnimation 0.8s ease 0.8s 1 normal forwards`;
   }, []);
   return (
     <section id="home" aria-label="Home">
-      <main>
+      <main className="contentful">
         <h1>
           <span>{home_hello || "Hi, my name is"}</span>
           <span>{my_name + "."}</span>

@@ -102,33 +102,23 @@ export const experiences = [
 export const work_heading = "Some things I've built";
 export const work_projects = [
   {
-    title: "Expense Tracker",
-    desc: "Tracks and computes your expenses. A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-    tech_stack: ["Reactttttttt", "CSS"],
-    picture: "expense_tracker.png",
+    title: "Portfolio Website",
+    desc: "It is an static web page which allows you to peek into my unhappening life. The focus of this website is that it can turn into a portfolio generator, just a few changes in the information and you are good to go!",
+    tech_stack: ["Next.JS", "Styled components", "SCSS", "Starter theme"],
+    picture: "portfolio.png",
     links: {
-      github: null,
-      website: "https://google.com",
-    },
-  },
-  {
-    title: "Testttttt",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis mollitia dolorum enim aspernatur et dolor fuga necessitatibus pariatur earum, voluptates quae ex totam, natus libero esse saepe, aut odit cumque quas. Tempora eveniet provident consequatur?",
-    tech_stack: ["Reactttttt", "CSS", "React", "CSS"],
-    picture: "expense_tracker.png",
-    links: {
-      github: "https://google.com",
-      website: "https://google.com",
+      github: "https://github.com/theGobindSingh/theGobindSingh",
+      website: "https://portfolio-gobindsingh.vercel.app/",
     },
   },
   {
     title: "Expense Tracker",
-    desc: "Tracks and computes your expenses. A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-    tech_stack: ["React", "CSS"],
+    desc: "This application allows you to track your day to day expenses and helps gain an insight into your daily income and expenditure.",
+    tech_stack: ["React", "Local-Storage managemant"],
     picture: "expense_tracker.png",
     links: {
-      github: null,
-      website: "https://google.com",
+      github: "https://github.com/theGobindSingh/Expense-Tracker",
+      website: "https://expense-tracker-eta-six.vercel.app/",
     },
   },
 ];

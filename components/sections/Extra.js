@@ -4,10 +4,9 @@ import useAddAni from "../hooks/useAddAni";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiPlay, FiPause } from "react-icons/fi";
 
 import { extra_heading, my_name } from "../texts";
-import { useRouter } from "next/router";
 
 var images = [];
 function importAll(r) {
@@ -35,26 +34,17 @@ export default function Photography() {
     },
   };
   const [currentSlide, setCurrentSlide] = useState(-1);
-  const [onPage, setOnPage] = useState(false);
-  const router = useRouter();
-  useEffect(() => {
-    if (router.asPath.includes("extra")) {
-      setOnPage(true);
-    }
-  }, [router]);
+  const [playing, setPlaying] = useState(false);
   useEffect(() => {
     if (window.innerWidth > 900) {
       var workTarget = document.querySelector("#extra-curricular");
       document.addEventListener("scroll", function tempVarExtra(e) {
         // console.log(workTarget.style.top);
         if (parseInt(workTarget.style.top.replace("px", "")) < 800) {
-          setOnPage(true);
           document.removeEventListener("scroll", tempVarExtra);
           // e.target.removeEventListener();
         }
       });
-    } else {
-      setOnPage(true);
     }
   }, []);
   var refff = useRef();
@@ -77,10 +67,39 @@ export default function Photography() {
         activeElems[0].classList.add("middle-pic");
       }
     }
-  }, [refff, currentSlide]);
+  }, [currentSlide]);
   useAddAni("extra-curricular");
   // console.log(images);
-
+  useEffect(() => {
+    var extraSectionElem = document.querySelector("#extra-curricular");
+    const extraSectionObserver = new MutationObserver(() => {
+      // console.log("...");
+      var activeElems = document.querySelectorAll(
+        '#extra-curricular li[aria-hidden*="false"]'
+      );
+      if (activeElems != undefined)
+        if (activeElems.length != 0) {
+          activeElems.forEach((elem) => {
+            if (elem.classList.contains("middle-pic")) {
+              elem.classList.remove("middle-pic");
+            }
+          });
+          if (activeElems.length == 3) {
+            // for PC
+            activeElems[1].classList.add("middle-pic");
+          }
+          if (activeElems.length == 1) {
+            //for mobile
+            activeElems[0].classList.add("middle-pic");
+          }
+          extraSectionObserver.disconnect();
+        }
+    });
+    extraSectionObserver.observe(extraSectionElem, {
+      childList: true,
+      subtree: true,
+    });
+  }, []);
   return (
     <section id="extra-curricular">
       <div className="contentful-different">
@@ -92,14 +111,14 @@ export default function Photography() {
             draggable={false}
             showDots={false}
             infinite={true}
-            autoPlay={onPage}
-            autoPlaySpeed={2500}
+            autoPlay={playing}
+            autoPlaySpeed={800}
             keyBoardControl={true}
             pauseOnHover={true}
             responsive={responsive}
             arrows={false}
             // customTransition="all .5"
-            transitionDuration={500}
+            transitionDuration={10}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-class"
@@ -155,6 +174,7 @@ export default function Photography() {
                       );
                     }}
                     sizes={"100%"}
+                    priority={ind == 0 || ind == 1 || ind == 2}
                   />
                 </a>
               );
@@ -175,6 +195,28 @@ export default function Photography() {
                 e.preventDefault();
               }}
             />
+          </button>
+          <button
+            className="move play"
+            onClick={(e) => {
+              e.preventDefault();
+              setPlaying(!playing);
+            }}
+            type="button"
+          >
+            {playing ? (
+              <FiPause
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              />
+            ) : (
+              <FiPlay
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              />
+            )}
           </button>
           <button
             className="moveright"
