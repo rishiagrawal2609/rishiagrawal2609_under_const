@@ -8,21 +8,10 @@ import { FiChevronLeft, FiChevronRight, FiPlay, FiPause } from "react-icons/fi";
 
 import { extra_heading, my_name } from "../texts";
 
-var images = [];
-function importAll(r) {
-  return r.keys().map(r);
-}
-images = importAll(
-  require.context(
-    "../../public/images/photography",
-    false,
-    /\.(png|jpe?g|svg)$/
-  )
-);
-
-// import xf from "../../public/images/photography"
-
-export default function Photography() {
+export default function Photography({ res }) {
+  if (res.length == 0) {
+    return <></>;
+  }
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 900 },
@@ -149,7 +138,7 @@ export default function Photography() {
               setCurrentSlide(nextSlide);
             }}
           >
-            {images.map((img, ind) => {
+            {res.map((img, ind) => {
               return (
                 <a
                   className="gallery-img-container"
@@ -161,11 +150,14 @@ export default function Photography() {
                   aria-label={`${my_name} | ${extra_heading} | Extracurricular | Extra-curricular`}
                 >
                   <Image
-                    src={img.default.src}
+                    src={img.url.replace(
+                      "https://res.cloudinary.com/thegobindsingh/image/upload",
+                      "https://res.cloudinary.com/thegobindsingh/image/upload/q_25"
+                    )}
                     alt={`${my_name} | ${extra_heading} | Extracurricular | Extra-curricular`}
                     fill
                     className="gallery-img"
-                    quality={50}
+                    quality={100}
                     onLoad={({ target }) => {
                       const { naturalWidth, naturalHeight } = target;
                       // console.log(naturalHeight, naturalWidth);

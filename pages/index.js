@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import cloudinary from "cloudinary";
 
 import Home from "../components/sections/Home.js";
 import About from "../components/sections/About.js";
@@ -17,7 +18,8 @@ import MainRight from "../components/_parts/MainRight.js";
 import { FiX } from "react-icons/fi";
 import { home_desc } from "../components/texts.js";
 
-export default function Main({ footerData }) {
+export default function Main({ footerData, photographyData }) {
+  // console.log(photographyData);
   const router = useRouter();
   const [popupVisible, setPopupViz] = useState(false);
   useEffect(() => {
@@ -165,7 +167,7 @@ export default function Main({ footerData }) {
         <About />
         <Experience />
         <Work />
-        <Extra />
+        <Extra res={photographyData} />
         <Contact footerData={footerData} />
       </>
       <>
@@ -180,9 +182,25 @@ export async function getServerSideProps(context) {
   var res = await axios.get(
     "https://api.github.com/repos/theGobindSingh/theGobindSingh"
   );
+  cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME, // add your cloud_name
+    api_key: process.env.CLOUDINARY_API_KEY, // add your api_key
+    api_secret: process.env.CLOUDINARY_API_SECRET, // add your api_secret
+    secure: true,
+  });
+  const photographyData = await cloudinary.v2.api.resources(
+    {
+      type: "upload",
+      prefix: "photo_portfolio", // add your folder
+      max_results: 999,
+    },
+    () => {}
+  );
+  // console.log(cloud?.resources);
   return {
     props: {
       footerData: res.data,
+      photographyData: photographyData?.resources || [],
     },
   };
 }
