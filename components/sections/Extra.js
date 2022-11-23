@@ -9,9 +9,6 @@ import { FiChevronLeft, FiChevronRight, FiPlay, FiPause } from "react-icons/fi";
 import { extra_heading, extra_link, my_name } from "../texts";
 
 export default function Photography({ res }) {
-  if (res.length == 0) {
-    return <></>;
-  }
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 900 },
@@ -89,6 +86,9 @@ export default function Photography({ res }) {
       subtree: true,
     });
   }, []);
+  if (res.length == 0) {
+    return <></>;
+  }
   return (
     <section id="extra-curricular">
       <div className="contentful-different">
