@@ -167,7 +167,7 @@ export default function Main({ footerData, photographyData }) {
         <About />
         <Experience />
         <Work />
-        {extra_heading != null && <Extra res={photographyData} />}
+        <Extra res={extra_heading.length != 0 ? photographyData : []} />
         <Contact footerData={footerData} />
       </>
       <>
