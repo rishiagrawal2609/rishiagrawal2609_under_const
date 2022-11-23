@@ -128,6 +128,7 @@ export const extra_heading = "Photography";
 //can be null
 //if null, it wont be there on website
 // I couldn't think of any way to make this customisable.. so im sorry :(
+export const extra_link = "https://photos.app.goo.gl/U8yYDxEZQ5dEuqF19";
 
 //CONTACT PAGE
 export const cont_heading_one = "What's Next?"; // cannot be null

@@ -6,7 +6,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { FiChevronLeft, FiChevronRight, FiPlay, FiPause } from "react-icons/fi";
 
-import { extra_heading, my_name } from "../texts";
+import { extra_heading, extra_link, my_name } from "../texts";
 
 export default function Photography({ res }) {
   if (res.length == 0) {
@@ -143,7 +143,7 @@ export default function Photography({ res }) {
                 <a
                   className="gallery-img-container"
                   key={ind}
-                  href="https://photos.app.goo.gl/U8yYDxEZQ5dEuqF19"
+                  href={extra_link}
                   target="_blank"
                   rel="noopener noreferrer"
                   as="image"

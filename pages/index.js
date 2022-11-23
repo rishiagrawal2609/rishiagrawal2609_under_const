@@ -16,7 +16,7 @@ import MainLeft from "../components/_parts/MainLeft.js";
 import MainRight from "../components/_parts/MainRight.js";
 
 import { FiX } from "react-icons/fi";
-import { home_desc } from "../components/texts.js";
+import { extra_heading, home_desc } from "../components/texts.js";
 
 export default function Main({ footerData, photographyData }) {
   // console.log(photographyData);
@@ -167,7 +167,7 @@ export default function Main({ footerData, photographyData }) {
         <About />
         <Experience />
         <Work />
-        <Extra res={photographyData} />
+        {extra_heading != null && <Extra res={photographyData} />}
         <Contact footerData={footerData} />
       </>
       <>
