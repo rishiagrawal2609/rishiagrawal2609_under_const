@@ -102,6 +102,22 @@ export const experiences = [
 export const work_heading = "Some things I've built";
 export const work_projects = [
   {
+    title: "Vintageinkk",
+    desc: "A blog type website for a small business Vintageinkk. It is a dynamic website made with Next.js and Contentful.",
+    tech_stack: [
+      "Next.JS",
+      "React-Query",
+      "GraphQL",
+      "Contentful",
+      "TypeScript",
+    ],
+    picture: "vintageinkk.jpeg",
+    links: {
+      github: "https://github.com/theGobindSingh/vintageinkk",
+      website: "https://vintageinkk.vercel.app/",
+    },
+  },
+  {
     title: "Portfolio Website",
     desc: "It is an static web page which allows you to peek into my unhappening life. The focus of this website is that it can turn into a portfolio generator, just a few changes in the information and you are good to go!",
     tech_stack: ["Next.JS", "Styled components", "SCSS", "Starter theme"],
@@ -133,5 +149,5 @@ export const extra_link = "https://photos.app.goo.gl/U8yYDxEZQ5dEuqF19";
 //CONTACT PAGE
 export const cont_heading_one = "What's Next?"; // cannot be null
 export const cont_heading_two = "Get In Touch."; // cannot be null
-export const cont_desc = `Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!`; // cannot be null
+export const cont_desc = `Although I'm not currently looking for any new long term jobs, my inbox is always open. Please feel free to contact me if any freelance opportunity arrises. \nWhether you have a question or just want to say hi, I'll try my best to get back to you!`; // cannot be null
 export const cont_email_btn = "Say Hello";
