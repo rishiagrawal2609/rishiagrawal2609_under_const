@@ -1,7 +1,7 @@
 # Hi there 👋, my name is Gobind Singh
 ## I am a geek, weeb and web developer from India.  
   
-![Gobind Singh](https://thegobindsingh.github.io/theGobindSingh/public/images/forBanner.jpg)
+![Gobind Singh](/public/images/forBanner.jpg)
 
  I enjoy creating things that live on the internet; A developer & geek from India, who loves MCU and Anime. I'm currently an intern in Bajaj Finserv Health as a Web Developer. I have previously worked with a startup and a software development company. I try my best to pour life into ideas and bring them to the relm of reality. In the digital world, knowledge is infinite. I wish to keep on learning and practice everyday, but most importantly, I love working with diverse people.  
    
